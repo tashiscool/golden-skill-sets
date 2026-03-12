@@ -62,6 +62,16 @@ Browse the agents below and copy/adapt the ones you need!
 
 See the [Multi-Tool Integrations](#-multi-tool-integrations) section below for full details.
 
+### Option 4: Industry Agent Packs (Movies, Books, and 28 More)
+
+Need non-software domains? Use the full industry expansion packs in [`industries/`](industries/README.md).
+
+Each pack includes:
+- Industry orchestrator
+- Division-level lead agents
+- Division-level operator agents
+- Activation prompt and division map
+
 ---
 
 ## 🎨 The Agency Roster
