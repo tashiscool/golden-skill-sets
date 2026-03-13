@@ -22,6 +22,7 @@ AGENT_DIRS=(
   support
   spatial-computing
   specialized
+  film-tv-ai
 )
 
 REQUIRED_FRONTMATTER=("name" "description" "color")
@@ -32,11 +33,18 @@ warnings=0
 
 lint_file() {
   local file="$1"
+  local base
+  base=$(basename "$file")
 
   # 1. Check frontmatter delimiters
   local first_line
   first_line=$(head -1 "$file")
   if [[ "$first_line" != "---" ]]; then
+    case "$base" in
+      README.md|QUICKSTART.md)
+        return
+        ;;
+    esac
     echo "ERROR $file: missing frontmatter opening ---"
     errors=$((errors + 1))
     return

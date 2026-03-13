@@ -72,6 +72,16 @@ Each pack includes:
 - Division-level operator agents
 - Activation prompt and division map
 
+### Option 5: AI-Native Film & TV Pipeline Division
+
+Need screenplay-to-visual-beat-to-render workflows? Use the dedicated AI-native film and television division in [`film-tv-ai/`](film-tv-ai/README.md).
+
+This pack includes:
+- Theme and canon agents
+- Screenplay, beat, storyboard, and continuity agents
+- Image, WAN/LTX2 motion, and render-routing agents
+- Dialogue/audio planning, stitch editing, and skeptical final QA
+
 ---
 
 ## 🎨 The Agency Roster
@@ -200,6 +210,27 @@ The unique specialists who don't fit in a box.
 | 📬 [Report Distribution Agent](specialized/report-distribution-agent.md) | Automated report delivery | Territory-based report distribution, scheduled sends |
 | 🔐 [Agentic Identity & Trust Architect](specialized/agentic-identity-trust.md) | Agent identity, authentication, trust verification | Multi-agent identity systems, agent authorization, audit trails |
 | 🔗 [Identity Graph Operator](specialized/identity-graph-operator.md) | Shared identity resolution for multi-agent systems | Entity deduplication, merge proposals, cross-agent identity consistency |
+
+### 🎬 Film & TV AI Division
+
+AI-native screenplay, image, motion, audio, and editorial workflows with continuity-safe handoffs and skeptical QC.
+
+| Agent | Specialty | When to Use |
+|-------|-----------|-------------|
+| 🎭 [Film & TV AI Orchestrator](film-tv-ai/film-tv-ai-orchestrator.md) | End-to-end AI film pipeline orchestration | Running theme-to-delivery workflows with hard artifact gates |
+| 📚 [Film & TV Theme Bible Architect](film-tv-ai/film-tv-ai-theme-bible-architect.md) | Theme bibles, canon locks, character DBs | Establishing the narrative source of truth before generation |
+| ✍️ [Film & TV Screenplay Expander](film-tv-ai/film-tv-ai-screenplay-expander.md) | Numbered screenplay expansion, bridge scenes, scene JSON | Turning canon into sceneable, machine-readable screenplay structure |
+| 👤 [Film & TV Character Continuity Director](film-tv-ai/film-tv-ai-character-continuity-director.md) | Look locks, wardrobe states, prop anchors, lifecycle continuity | Preventing identity drift across image and motion stages |
+| 🎥 [Film & TV Visual Beat Planner](film-tv-ai/film-tv-ai-visual-beat-planner.md) | Beat decomposition, framing, blocking, sound cues | Converting scenes into renderable visual units |
+| 🧾 [Film & TV Storyboard Director](film-tv-ai/film-tv-ai-storyboard-director.md) | Storyboard coverage and editorial frame planning | Designing board-ready coverage that actually cuts together |
+| 🖼️ [Film & TV Seed Image Prompt Engineer](film-tv-ai/film-tv-ai-seed-image-prompt-engineer.md) | Seed-image and keyframe prompt packages | Building character-stable image prompts for storyboards and conditioning |
+| 🌊 [Film & TV WAN I2V Director](film-tv-ai/film-tv-ai-wan-i2v-director.md) | Image-to-video conditioning strategy | Directing WAN-based motion with realistic stability constraints |
+| 🕺 [Film & TV Motion Reference Director](film-tv-ai/film-tv-ai-motion-reference-director.md) | Pose, path, and choreography reference routing | Planning controlled movement for fragile or precise shots |
+| 🎞️ [Film & TV LTX2 Prompt Compiler](film-tv-ai/film-tv-ai-ltx2-prompt-compiler.md) | WAN/LTX2 motion prompt compilation and clip cards | Turning beat artifacts into render-ready motion packages |
+| 🔀 [Film & TV Model Router & Render Dispatcher](film-tv-ai/film-tv-ai-model-router-render-dispatcher.md) | Model routing, queue manifests, retry classification | Dispatching render jobs safely across models and profiles |
+| 🔊 [Film & TV Dialogue & Audio Beat Planner](film-tv-ai/film-tv-ai-dialogue-audio-beat-planner.md) | Dialogue timing, voice casting, ambience, ADR/TTS maps | Giving audio the same artifact rigor as visuals |
+| ✂️ [Film & TV Stitch Editor](film-tv-ai/film-tv-ai-stitch-editor.md) | Stitch order, transitions, trims, assembly logic | Turning generated assets into readable sequences |
+| 🔎 [Film & TV Continuity Reality Checker](film-tv-ai/film-tv-ai-continuity-reality-checker.md) | Final continuity, sync, pacing, and readiness QA | Blocking false-ready approvals before delivery |
 
 ### 🎮 Game Development Division
 
