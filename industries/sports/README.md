@@ -8,25 +8,32 @@ This pack defines a full operating model for Sports with one orchestrator and pa
 - Risk Focus: injury/availability risk, roster inefficiency, event-day failures, and sponsor underperformance
 - Compliance Focus: league rules, medical standards, event safety, and sponsorship contract obligations
 - Outcome Focus: competitive performance, attendance, fan engagement, and commercial yield
+- Human Approval Required: only for external writes, irreversible actions, or public-facing launches
 
 ## Division Map
-| Division | Lead Agent | Operator Agent |
-|---|---|---|
-| Team Operations | Sports Team Operations Lead | Sports Team Operations Operator |
-| Coaching & Performance | Sports Coaching & Performance Lead | Sports Coaching & Performance Operator |
-| Medical & Recovery | Sports Medical & Recovery Lead | Sports Medical & Recovery Operator |
-| Scouting & Recruiting | Sports Scouting & Recruiting Lead | Sports Scouting & Recruiting Operator |
-| Media & Content | Sports Media & Content Lead | Sports Media & Content Operator |
-| Sponsorship | Sports Sponsorship Lead | Sports Sponsorship Operator |
-| Ticketing | Sports Ticketing Lead | Sports Ticketing Operator |
-| Fan Engagement | Sports Fan Engagement Lead | Sports Fan Engagement Operator |
+| Division | Profile | Lead Agent | Operator Agent |
+|---|---|---|---|
+| Team Operations | operations | Sports Team Operations Lead | Sports Team Operations Operator |
+| Coaching & Performance | operations | Sports Coaching & Performance Lead | Sports Coaching & Performance Operator |
+| Medical & Recovery | clinical | Sports Medical & Recovery Lead | Sports Medical & Recovery Operator |
+| Scouting & Recruiting | operations | Sports Scouting & Recruiting Lead | Sports Scouting & Recruiting Operator |
+| Media & Content | creative | Sports Media & Content Lead | Sports Media & Content Operator |
+| Sponsorship | growth | Sports Sponsorship Lead | Sports Sponsorship Operator |
+| Ticketing | growth | Sports Ticketing Lead | Sports Ticketing Operator |
+| Fan Engagement | growth | Sports Fan Engagement Lead | Sports Fan Engagement Operator |
 
 ## Stage-Gate Model
-1. Discovery: baseline metrics, risk framing, and scope boundaries.
-2. Planning: roadmap, owners, dependencies, and acceptance criteria.
-3. Execution: lead/operator delivery loops by division.
-4. Validation: QA/compliance checks with evidence artifacts.
-5. Launch/Ops: handover completeness and operating review cadence.
+1. Discovery: baseline metrics, risk framing, source map, and scope boundaries.
+2. Planning: roadmap, owners, dependencies, acceptance criteria, and eval set definition.
+3. Execution: lead/operator delivery loops by division using structured handoffs.
+4. Validation: QA, approval, citation, and policy checks with evidence artifacts.
+5. Launch/Ops: handover completeness, live monitoring, and rollback or escalation readiness.
+
+## Reliability Rules
+- Consequential actions require human approval according to the agent prompt.
+- Policy, regulatory, legal, medical, or contractual claims require source, jurisdiction, and effective date when applicable.
+- Final outputs should follow the structured contracts embedded in each agent file.
+- Every prompt, model, tool, or policy change should trigger reevaluation before rollout.
 
 ## Agent Files
 - Orchestrator: [agents/sports-orchestrator.md](agents/sports-orchestrator.md)
@@ -52,5 +59,5 @@ This pack defines a full operating model for Sports with one orchestrator and pa
 Activate Sports Orchestrator.
 Objective: Optimize team and business performance across competition, fan growth, and commercial operations.
 Run the stage-gate model end to end with evidence-backed pass/fail decisions.
-Require lead/operator handoffs in every division and escalate critical blockers within one cycle.
+Require structured outputs, explicit citations for policy claims, and human approval before consequential actions.
 ```

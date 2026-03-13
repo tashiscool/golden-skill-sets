@@ -8,25 +8,32 @@ This pack defines a full operating model for Food & Beverage (CPG) with one orch
 - Risk Focus: recall exposure, forecast error, shelf disruption, and promotional inefficiency
 - Compliance Focus: food safety plans, labeling/claims controls, retailer standards, and traceability
 - Outcome Focus: distribution breadth, velocity, margin, and safety performance
+- Human Approval Required: yes
 
 ## Division Map
-| Division | Lead Agent | Operator Agent |
-|---|---|---|
-| R&D | Food & Beverage (CPG) R&D Lead | Food & Beverage (CPG) R&D Operator |
-| Regulatory & Labeling | Food & Beverage (CPG) Regulatory & Labeling Lead | Food & Beverage (CPG) Regulatory & Labeling Operator |
-| Procurement | Food & Beverage (CPG) Procurement Lead | Food & Beverage (CPG) Procurement Operator |
-| Manufacturing | Food & Beverage (CPG) Manufacturing Lead | Food & Beverage (CPG) Manufacturing Operator |
-| Distribution | Food & Beverage (CPG) Distribution Lead | Food & Beverage (CPG) Distribution Operator |
-| Sales | Food & Beverage (CPG) Sales Lead | Food & Beverage (CPG) Sales Operator |
-| Trade Marketing | Food & Beverage (CPG) Trade Marketing Lead | Food & Beverage (CPG) Trade Marketing Operator |
-| QA & Food Safety | Food & Beverage (CPG) QA & Food Safety Lead | Food & Beverage (CPG) QA & Food Safety Operator |
+| Division | Profile | Lead Agent | Operator Agent |
+|---|---|---|---|
+| R&D | knowledge | Food & Beverage (CPG) R&D Lead | Food & Beverage (CPG) R&D Operator |
+| Regulatory & Labeling | governance | Food & Beverage (CPG) Regulatory & Labeling Lead | Food & Beverage (CPG) Regulatory & Labeling Operator |
+| Procurement | operations | Food & Beverage (CPG) Procurement Lead | Food & Beverage (CPG) Procurement Operator |
+| Manufacturing | operations | Food & Beverage (CPG) Manufacturing Lead | Food & Beverage (CPG) Manufacturing Operator |
+| Distribution | operations | Food & Beverage (CPG) Distribution Lead | Food & Beverage (CPG) Distribution Operator |
+| Sales | growth | Food & Beverage (CPG) Sales Lead | Food & Beverage (CPG) Sales Operator |
+| Trade Marketing | growth | Food & Beverage (CPG) Trade Marketing Lead | Food & Beverage (CPG) Trade Marketing Operator |
+| QA & Food Safety | governance | Food & Beverage (CPG) QA & Food Safety Lead | Food & Beverage (CPG) QA & Food Safety Operator |
 
 ## Stage-Gate Model
-1. Discovery: baseline metrics, risk framing, and scope boundaries.
-2. Planning: roadmap, owners, dependencies, and acceptance criteria.
-3. Execution: lead/operator delivery loops by division.
-4. Validation: QA/compliance checks with evidence artifacts.
-5. Launch/Ops: handover completeness and operating review cadence.
+1. Discovery: baseline metrics, risk framing, source map, and scope boundaries.
+2. Planning: roadmap, owners, dependencies, acceptance criteria, and eval set definition.
+3. Execution: lead/operator delivery loops by division using structured handoffs.
+4. Validation: QA, approval, citation, and policy checks with evidence artifacts.
+5. Launch/Ops: handover completeness, live monitoring, and rollback or escalation readiness.
+
+## Reliability Rules
+- Consequential actions require human approval according to the agent prompt.
+- Policy, regulatory, legal, medical, or contractual claims require source, jurisdiction, and effective date when applicable.
+- Final outputs should follow the structured contracts embedded in each agent file.
+- Every prompt, model, tool, or policy change should trigger reevaluation before rollout.
 
 ## Agent Files
 - Orchestrator: [agents/food-beverage-cpg-orchestrator.md](agents/food-beverage-cpg-orchestrator.md)
@@ -52,5 +59,5 @@ This pack defines a full operating model for Food & Beverage (CPG) with one orch
 Activate Food & Beverage (CPG) Orchestrator.
 Objective: Develop and scale profitable CPG portfolios while maintaining food safety and in-stock performance.
 Run the stage-gate model end to end with evidence-backed pass/fail decisions.
-Require lead/operator handoffs in every division and escalate critical blockers within one cycle.
+Require structured outputs, explicit citations for policy claims, and human approval before consequential actions.
 ```

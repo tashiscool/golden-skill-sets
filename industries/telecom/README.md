@@ -8,25 +8,32 @@ This pack defines a full operating model for Telecom with one orchestrator and p
 - Risk Focus: network incidents, rollout delays, churn spikes, and support backlog
 - Compliance Focus: spectrum/regulatory obligations, outage reporting, consumer protections, and security standards
 - Outcome Focus: network availability, churn reduction, ARPU quality, and service productivity
+- Human Approval Required: yes
 
 ## Division Map
-| Division | Lead Agent | Operator Agent |
-|---|---|---|
-| Network Planning | Telecom Network Planning Lead | Telecom Network Planning Operator |
-| Build & Deploy | Telecom Build & Deploy Lead | Telecom Build & Deploy Operator |
-| NOC Operations | Telecom NOC Operations Lead | Telecom NOC Operations Operator |
-| BSS/OSS | Telecom BSS/OSS Lead | Telecom BSS/OSS Operator |
-| Customer Support | Telecom Customer Support Lead | Telecom Customer Support Operator |
-| Product Bundles | Telecom Product Bundles Lead | Telecom Product Bundles Operator |
-| Regulatory | Telecom Regulatory Lead | Telecom Regulatory Operator |
-| Churn & Retention Analytics | Telecom Churn & Retention Analytics Lead | Telecom Churn & Retention Analytics Operator |
+| Division | Profile | Lead Agent | Operator Agent |
+|---|---|---|---|
+| Network Planning | technical | Telecom Network Planning Lead | Telecom Network Planning Operator |
+| Build & Deploy | operations | Telecom Build & Deploy Lead | Telecom Build & Deploy Operator |
+| NOC Operations | technical | Telecom NOC Operations Lead | Telecom NOC Operations Operator |
+| BSS/OSS | technical | Telecom BSS/OSS Lead | Telecom BSS/OSS Operator |
+| Customer Support | service | Telecom Customer Support Lead | Telecom Customer Support Operator |
+| Product Bundles | growth | Telecom Product Bundles Lead | Telecom Product Bundles Operator |
+| Regulatory | governance | Telecom Regulatory Lead | Telecom Regulatory Operator |
+| Churn & Retention Analytics | analytics | Telecom Churn & Retention Analytics Lead | Telecom Churn & Retention Analytics Operator |
 
 ## Stage-Gate Model
-1. Discovery: baseline metrics, risk framing, and scope boundaries.
-2. Planning: roadmap, owners, dependencies, and acceptance criteria.
-3. Execution: lead/operator delivery loops by division.
-4. Validation: QA/compliance checks with evidence artifacts.
-5. Launch/Ops: handover completeness and operating review cadence.
+1. Discovery: baseline metrics, risk framing, source map, and scope boundaries.
+2. Planning: roadmap, owners, dependencies, acceptance criteria, and eval set definition.
+3. Execution: lead/operator delivery loops by division using structured handoffs.
+4. Validation: QA, approval, citation, and policy checks with evidence artifacts.
+5. Launch/Ops: handover completeness, live monitoring, and rollback or escalation readiness.
+
+## Reliability Rules
+- Consequential actions require human approval according to the agent prompt.
+- Policy, regulatory, legal, medical, or contractual claims require source, jurisdiction, and effective date when applicable.
+- Final outputs should follow the structured contracts embedded in each agent file.
+- Every prompt, model, tool, or policy change should trigger reevaluation before rollout.
 
 ## Agent Files
 - Orchestrator: [agents/telecom-orchestrator.md](agents/telecom-orchestrator.md)
@@ -52,5 +59,5 @@ This pack defines a full operating model for Telecom with one orchestrator and p
 Activate Telecom Orchestrator.
 Objective: Expand network capacity and service quality while reducing churn and operational cost-to-serve.
 Run the stage-gate model end to end with evidence-backed pass/fail decisions.
-Require lead/operator handoffs in every division and escalate critical blockers within one cycle.
+Require structured outputs, explicit citations for policy claims, and human approval before consequential actions.
 ```

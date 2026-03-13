@@ -8,25 +8,32 @@ This pack defines a full operating model for Retail & E-commerce with one orches
 - Risk Focus: stockouts/overstock, pricing errors, fulfillment failures, and return-rate inflation
 - Compliance Focus: consumer protection, payments/privacy controls, marketplace rules, and tax obligations
 - Outcome Focus: gross margin return on inventory, conversion, AOV, and service-level attainment
+- Human Approval Required: only for external writes, irreversible actions, or public-facing launches
 
 ## Division Map
-| Division | Lead Agent | Operator Agent |
-|---|---|---|
-| Merchandising | Retail & E-commerce Merchandising Lead | Retail & E-commerce Merchandising Operator |
-| Inventory | Retail & E-commerce Inventory Lead | Retail & E-commerce Inventory Operator |
-| Pricing & Promotions | Retail & E-commerce Pricing & Promotions Lead | Retail & E-commerce Pricing & Promotions Operator |
-| Store Operations | Retail & E-commerce Store Operations Lead | Retail & E-commerce Store Operations Operator |
-| E-commerce Operations | Retail & E-commerce E-commerce Operations Lead | Retail & E-commerce E-commerce Operations Operator |
-| CRM & Loyalty | Retail & E-commerce CRM & Loyalty Lead | Retail & E-commerce CRM & Loyalty Operator |
-| Marketplace Operations | Retail & E-commerce Marketplace Operations Lead | Retail & E-commerce Marketplace Operations Operator |
-| Support | Retail & E-commerce Support Lead | Retail & E-commerce Support Operator |
+| Division | Profile | Lead Agent | Operator Agent |
+|---|---|---|---|
+| Merchandising | strategy | Retail & E-commerce Merchandising Lead | Retail & E-commerce Merchandising Operator |
+| Inventory | operations | Retail & E-commerce Inventory Lead | Retail & E-commerce Inventory Operator |
+| Pricing & Promotions | growth | Retail & E-commerce Pricing & Promotions Lead | Retail & E-commerce Pricing & Promotions Operator |
+| Store Operations | operations | Retail & E-commerce Store Operations Lead | Retail & E-commerce Store Operations Operator |
+| E-commerce Operations | operations | Retail & E-commerce E-commerce Operations Lead | Retail & E-commerce E-commerce Operations Operator |
+| CRM & Loyalty | growth | Retail & E-commerce CRM & Loyalty Lead | Retail & E-commerce CRM & Loyalty Operator |
+| Marketplace Operations | operations | Retail & E-commerce Marketplace Operations Lead | Retail & E-commerce Marketplace Operations Operator |
+| Support | service | Retail & E-commerce Support Lead | Retail & E-commerce Support Operator |
 
 ## Stage-Gate Model
-1. Discovery: baseline metrics, risk framing, and scope boundaries.
-2. Planning: roadmap, owners, dependencies, and acceptance criteria.
-3. Execution: lead/operator delivery loops by division.
-4. Validation: QA/compliance checks with evidence artifacts.
-5. Launch/Ops: handover completeness and operating review cadence.
+1. Discovery: baseline metrics, risk framing, source map, and scope boundaries.
+2. Planning: roadmap, owners, dependencies, acceptance criteria, and eval set definition.
+3. Execution: lead/operator delivery loops by division using structured handoffs.
+4. Validation: QA, approval, citation, and policy checks with evidence artifacts.
+5. Launch/Ops: handover completeness, live monitoring, and rollback or escalation readiness.
+
+## Reliability Rules
+- Consequential actions require human approval according to the agent prompt.
+- Policy, regulatory, legal, medical, or contractual claims require source, jurisdiction, and effective date when applicable.
+- Final outputs should follow the structured contracts embedded in each agent file.
+- Every prompt, model, tool, or policy change should trigger reevaluation before rollout.
 
 ## Agent Files
 - Orchestrator: [agents/retail-ecommerce-orchestrator.md](agents/retail-ecommerce-orchestrator.md)
@@ -52,5 +59,5 @@ This pack defines a full operating model for Retail & E-commerce with one orches
 Activate Retail & E-commerce Orchestrator.
 Objective: Optimize assortment, inventory, and channel execution to maximize profitable growth online and in-store.
 Run the stage-gate model end to end with evidence-backed pass/fail decisions.
-Require lead/operator handoffs in every division and escalate critical blockers within one cycle.
+Require structured outputs, explicit citations for policy claims, and human approval before consequential actions.
 ```

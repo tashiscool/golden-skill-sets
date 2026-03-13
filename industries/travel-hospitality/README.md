@@ -8,25 +8,32 @@ This pack defines a full operating model for Travel & Hospitality with one orche
 - Risk Focus: demand volatility, service failures, overbooking/underutilization, and partner breakdowns
 - Compliance Focus: consumer protections, local hospitality regulations, data/privacy, and payment security
 - Outcome Focus: RevPAR/ADR optimization, occupancy, guest satisfaction, and repeat bookings
+- Human Approval Required: only for external writes, irreversible actions, or public-facing launches
 
 ## Division Map
-| Division | Lead Agent | Operator Agent |
-|---|---|---|
-| Revenue Management | Travel & Hospitality Revenue Management Lead | Travel & Hospitality Revenue Management Operator |
-| Reservations | Travel & Hospitality Reservations Lead | Travel & Hospitality Reservations Operator |
-| Property Operations | Travel & Hospitality Property Operations Lead | Travel & Hospitality Property Operations Operator |
-| Guest Experience | Travel & Hospitality Guest Experience Lead | Travel & Hospitality Guest Experience Operator |
-| Partnerships | Travel & Hospitality Partnerships Lead | Travel & Hospitality Partnerships Operator |
-| Marketing | Travel & Hospitality Marketing Lead | Travel & Hospitality Marketing Operator |
-| Events | Travel & Hospitality Events Lead | Travel & Hospitality Events Operator |
-| Compliance | Travel & Hospitality Compliance Lead | Travel & Hospitality Compliance Operator |
+| Division | Profile | Lead Agent | Operator Agent |
+|---|---|---|---|
+| Revenue Management | analytics | Travel & Hospitality Revenue Management Lead | Travel & Hospitality Revenue Management Operator |
+| Reservations | operations | Travel & Hospitality Reservations Lead | Travel & Hospitality Reservations Operator |
+| Property Operations | operations | Travel & Hospitality Property Operations Lead | Travel & Hospitality Property Operations Operator |
+| Guest Experience | service | Travel & Hospitality Guest Experience Lead | Travel & Hospitality Guest Experience Operator |
+| Partnerships | strategy | Travel & Hospitality Partnerships Lead | Travel & Hospitality Partnerships Operator |
+| Marketing | growth | Travel & Hospitality Marketing Lead | Travel & Hospitality Marketing Operator |
+| Events | operations | Travel & Hospitality Events Lead | Travel & Hospitality Events Operator |
+| Compliance | governance | Travel & Hospitality Compliance Lead | Travel & Hospitality Compliance Operator |
 
 ## Stage-Gate Model
-1. Discovery: baseline metrics, risk framing, and scope boundaries.
-2. Planning: roadmap, owners, dependencies, and acceptance criteria.
-3. Execution: lead/operator delivery loops by division.
-4. Validation: QA/compliance checks with evidence artifacts.
-5. Launch/Ops: handover completeness and operating review cadence.
+1. Discovery: baseline metrics, risk framing, source map, and scope boundaries.
+2. Planning: roadmap, owners, dependencies, acceptance criteria, and eval set definition.
+3. Execution: lead/operator delivery loops by division using structured handoffs.
+4. Validation: QA, approval, citation, and policy checks with evidence artifacts.
+5. Launch/Ops: handover completeness, live monitoring, and rollback or escalation readiness.
+
+## Reliability Rules
+- Consequential actions require human approval according to the agent prompt.
+- Policy, regulatory, legal, medical, or contractual claims require source, jurisdiction, and effective date when applicable.
+- Final outputs should follow the structured contracts embedded in each agent file.
+- Every prompt, model, tool, or policy change should trigger reevaluation before rollout.
 
 ## Agent Files
 - Orchestrator: [agents/travel-hospitality-orchestrator.md](agents/travel-hospitality-orchestrator.md)
@@ -52,5 +59,5 @@ This pack defines a full operating model for Travel & Hospitality with one orche
 Activate Travel & Hospitality Orchestrator.
 Objective: Maximize occupancy and revenue while protecting service quality across customer journeys.
 Run the stage-gate model end to end with evidence-backed pass/fail decisions.
-Require lead/operator handoffs in every division and escalate critical blockers within one cycle.
+Require structured outputs, explicit citations for policy claims, and human approval before consequential actions.
 ```

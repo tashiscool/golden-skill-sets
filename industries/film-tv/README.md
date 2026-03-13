@@ -8,25 +8,32 @@ This pack defines a full operating model for Film & TV with one orchestrator and
 - Risk Focus: budget overruns, schedule slips, union breaches, and rights/clearance failures
 - Compliance Focus: guild agreements, location permitting, music/clip clearances, and delivery contracts
 - Outcome Focus: on-time delivery, variance-to-budget, completion quality, and audience completion/engagement
+- Human Approval Required: only for external writes, irreversible actions, or public-facing launches
 
 ## Division Map
-| Division | Lead Agent | Operator Agent |
-|---|---|---|
-| Development | Film & TV Development Lead | Film & TV Development Operator |
-| Pre-Production | Film & TV Pre-Production Lead | Film & TV Pre-Production Operator |
-| Production | Film & TV Production Lead | Film & TV Production Operator |
-| Post-Production | Film & TV Post-Production Lead | Film & TV Post-Production Operator |
-| Distribution | Film & TV Distribution Lead | Film & TV Distribution Operator |
-| Marketing & PR | Film & TV Marketing & PR Lead | Film & TV Marketing & PR Operator |
-| Talent & Unions | Film & TV Talent & Unions Lead | Film & TV Talent & Unions Operator |
-| Business Affairs | Film & TV Business Affairs Lead | Film & TV Business Affairs Operator |
+| Division | Profile | Lead Agent | Operator Agent |
+|---|---|---|---|
+| Development | creative | Film & TV Development Lead | Film & TV Development Operator |
+| Pre-Production | operations | Film & TV Pre-Production Lead | Film & TV Pre-Production Operator |
+| Production | operations | Film & TV Production Lead | Film & TV Production Operator |
+| Post-Production | operations | Film & TV Post-Production Lead | Film & TV Post-Production Operator |
+| Distribution | growth | Film & TV Distribution Lead | Film & TV Distribution Operator |
+| Marketing & PR | growth | Film & TV Marketing & PR Lead | Film & TV Marketing & PR Operator |
+| Talent & Unions | governance | Film & TV Talent & Unions Lead | Film & TV Talent & Unions Operator |
+| Business Affairs | governance | Film & TV Business Affairs Lead | Film & TV Business Affairs Operator |
 
 ## Stage-Gate Model
-1. Discovery: baseline metrics, risk framing, and scope boundaries.
-2. Planning: roadmap, owners, dependencies, and acceptance criteria.
-3. Execution: lead/operator delivery loops by division.
-4. Validation: QA/compliance checks with evidence artifacts.
-5. Launch/Ops: handover completeness and operating review cadence.
+1. Discovery: baseline metrics, risk framing, source map, and scope boundaries.
+2. Planning: roadmap, owners, dependencies, acceptance criteria, and eval set definition.
+3. Execution: lead/operator delivery loops by division using structured handoffs.
+4. Validation: QA, approval, citation, and policy checks with evidence artifacts.
+5. Launch/Ops: handover completeness, live monitoring, and rollback or escalation readiness.
+
+## Reliability Rules
+- Consequential actions require human approval according to the agent prompt.
+- Policy, regulatory, legal, medical, or contractual claims require source, jurisdiction, and effective date when applicable.
+- Final outputs should follow the structured contracts embedded in each agent file.
+- Every prompt, model, tool, or policy change should trigger reevaluation before rollout.
 
 ## Agent Files
 - Orchestrator: [agents/film-tv-orchestrator.md](agents/film-tv-orchestrator.md)
@@ -52,5 +59,5 @@ This pack defines a full operating model for Film & TV with one orchestrator and
 Activate Film & TV Orchestrator.
 Objective: Develop, produce, and monetize scripted and unscripted slate work across theatrical, broadcast, and streaming windows.
 Run the stage-gate model end to end with evidence-backed pass/fail decisions.
-Require lead/operator handoffs in every division and escalate critical blockers within one cycle.
+Require structured outputs, explicit citations for policy claims, and human approval before consequential actions.
 ```

@@ -8,25 +8,32 @@ This pack defines a full operating model for Manufacturing with one orchestrator
 - Risk Focus: line downtime, quality escapes, supply disruptions, and planning instability
 - Compliance Focus: process controls, safety standards, traceability, and supplier conformance
 - Outcome Focus: OEE, scrap reduction, on-time-in-full, and cost per unit
+- Human Approval Required: only for external writes, irreversible actions, or public-facing launches
 
 ## Division Map
-| Division | Lead Agent | Operator Agent |
-|---|---|---|
-| Product Engineering | Manufacturing Product Engineering Lead | Manufacturing Product Engineering Operator |
-| Planning & Scheduling | Manufacturing Planning & Scheduling Lead | Manufacturing Planning & Scheduling Operator |
-| Procurement | Manufacturing Procurement Lead | Manufacturing Procurement Operator |
-| Production | Manufacturing Production Lead | Manufacturing Production Operator |
-| Maintenance | Manufacturing Maintenance Lead | Manufacturing Maintenance Operator |
-| Quality | Manufacturing Quality Lead | Manufacturing Quality Operator |
-| Supply Chain | Manufacturing Supply Chain Lead | Manufacturing Supply Chain Operator |
-| Continuous Improvement | Manufacturing Continuous Improvement Lead | Manufacturing Continuous Improvement Operator |
+| Division | Profile | Lead Agent | Operator Agent |
+|---|---|---|---|
+| Product Engineering | technical | Manufacturing Product Engineering Lead | Manufacturing Product Engineering Operator |
+| Planning & Scheduling | operations | Manufacturing Planning & Scheduling Lead | Manufacturing Planning & Scheduling Operator |
+| Procurement | operations | Manufacturing Procurement Lead | Manufacturing Procurement Operator |
+| Production | operations | Manufacturing Production Lead | Manufacturing Production Operator |
+| Maintenance | operations | Manufacturing Maintenance Lead | Manufacturing Maintenance Operator |
+| Quality | governance | Manufacturing Quality Lead | Manufacturing Quality Operator |
+| Supply Chain | operations | Manufacturing Supply Chain Lead | Manufacturing Supply Chain Operator |
+| Continuous Improvement | analytics | Manufacturing Continuous Improvement Lead | Manufacturing Continuous Improvement Operator |
 
 ## Stage-Gate Model
-1. Discovery: baseline metrics, risk framing, and scope boundaries.
-2. Planning: roadmap, owners, dependencies, and acceptance criteria.
-3. Execution: lead/operator delivery loops by division.
-4. Validation: QA/compliance checks with evidence artifacts.
-5. Launch/Ops: handover completeness and operating review cadence.
+1. Discovery: baseline metrics, risk framing, source map, and scope boundaries.
+2. Planning: roadmap, owners, dependencies, acceptance criteria, and eval set definition.
+3. Execution: lead/operator delivery loops by division using structured handoffs.
+4. Validation: QA, approval, citation, and policy checks with evidence artifacts.
+5. Launch/Ops: handover completeness, live monitoring, and rollback or escalation readiness.
+
+## Reliability Rules
+- Consequential actions require human approval according to the agent prompt.
+- Policy, regulatory, legal, medical, or contractual claims require source, jurisdiction, and effective date when applicable.
+- Final outputs should follow the structured contracts embedded in each agent file.
+- Every prompt, model, tool, or policy change should trigger reevaluation before rollout.
 
 ## Agent Files
 - Orchestrator: [agents/manufacturing-orchestrator.md](agents/manufacturing-orchestrator.md)
@@ -52,5 +59,5 @@ This pack defines a full operating model for Manufacturing with one orchestrator
 Activate Manufacturing Orchestrator.
 Objective: Improve throughput, quality, and reliability from planning through production and fulfillment.
 Run the stage-gate model end to end with evidence-backed pass/fail decisions.
-Require lead/operator handoffs in every division and escalate critical blockers within one cycle.
+Require structured outputs, explicit citations for policy claims, and human approval before consequential actions.
 ```

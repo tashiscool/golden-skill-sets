@@ -8,25 +8,32 @@ This pack defines a full operating model for Restaurants & QSR with one orchestr
 - Risk Focus: service inconsistency, food waste, labor imbalance, and guest satisfaction volatility
 - Compliance Focus: food handling, labor rules, franchise standards, and local permitting
 - Outcome Focus: same-store sales, ticket times, guest satisfaction, and waste reduction
+- Human Approval Required: yes
 
 ## Division Map
-| Division | Lead Agent | Operator Agent |
-|---|---|---|
-| Menu R&D | Restaurants & QSR Menu R&D Lead | Restaurants & QSR Menu R&D Operator |
-| Procurement | Restaurants & QSR Procurement Lead | Restaurants & QSR Procurement Operator |
-| Kitchen Operations | Restaurants & QSR Kitchen Operations Lead | Restaurants & QSR Kitchen Operations Operator |
-| Front-of-House | Restaurants & QSR Front-of-House Lead | Restaurants & QSR Front-of-House Operator |
-| Delivery Operations | Restaurants & QSR Delivery Operations Lead | Restaurants & QSR Delivery Operations Operator |
-| Local Marketing | Restaurants & QSR Local Marketing Lead | Restaurants & QSR Local Marketing Operator |
-| Franchising | Restaurants & QSR Franchising Lead | Restaurants & QSR Franchising Operator |
-| Training & QA | Restaurants & QSR Training & QA Lead | Restaurants & QSR Training & QA Operator |
+| Division | Profile | Lead Agent | Operator Agent |
+|---|---|---|---|
+| Menu R&D | knowledge | Restaurants & QSR Menu R&D Lead | Restaurants & QSR Menu R&D Operator |
+| Procurement | operations | Restaurants & QSR Procurement Lead | Restaurants & QSR Procurement Operator |
+| Kitchen Operations | operations | Restaurants & QSR Kitchen Operations Lead | Restaurants & QSR Kitchen Operations Operator |
+| Front-of-House | operations | Restaurants & QSR Front-of-House Lead | Restaurants & QSR Front-of-House Operator |
+| Delivery Operations | operations | Restaurants & QSR Delivery Operations Lead | Restaurants & QSR Delivery Operations Operator |
+| Local Marketing | growth | Restaurants & QSR Local Marketing Lead | Restaurants & QSR Local Marketing Operator |
+| Franchising | governance | Restaurants & QSR Franchising Lead | Restaurants & QSR Franchising Operator |
+| Training & QA | governance | Restaurants & QSR Training & QA Lead | Restaurants & QSR Training & QA Operator |
 
 ## Stage-Gate Model
-1. Discovery: baseline metrics, risk framing, and scope boundaries.
-2. Planning: roadmap, owners, dependencies, and acceptance criteria.
-3. Execution: lead/operator delivery loops by division.
-4. Validation: QA/compliance checks with evidence artifacts.
-5. Launch/Ops: handover completeness and operating review cadence.
+1. Discovery: baseline metrics, risk framing, source map, and scope boundaries.
+2. Planning: roadmap, owners, dependencies, acceptance criteria, and eval set definition.
+3. Execution: lead/operator delivery loops by division using structured handoffs.
+4. Validation: QA, approval, citation, and policy checks with evidence artifacts.
+5. Launch/Ops: handover completeness, live monitoring, and rollback or escalation readiness.
+
+## Reliability Rules
+- Consequential actions require human approval according to the agent prompt.
+- Policy, regulatory, legal, medical, or contractual claims require source, jurisdiction, and effective date when applicable.
+- Final outputs should follow the structured contracts embedded in each agent file.
+- Every prompt, model, tool, or policy change should trigger reevaluation before rollout.
 
 ## Agent Files
 - Orchestrator: [agents/restaurants-qsr-orchestrator.md](agents/restaurants-qsr-orchestrator.md)
@@ -52,5 +59,5 @@ This pack defines a full operating model for Restaurants & QSR with one orchestr
 Activate Restaurants & QSR Orchestrator.
 Objective: Standardize high-throughput operations and guest experience across owned and franchised locations.
 Run the stage-gate model end to end with evidence-backed pass/fail decisions.
-Require lead/operator handoffs in every division and escalate critical blockers within one cycle.
+Require structured outputs, explicit citations for policy claims, and human approval before consequential actions.
 ```

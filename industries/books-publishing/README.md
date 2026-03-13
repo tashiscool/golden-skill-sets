@@ -8,25 +8,32 @@ This pack defines a full operating model for Books & Publishing with one orchest
 - Risk Focus: acquisition miss-rate, title launch slippage, rights disputes, and inventory imbalance
 - Compliance Focus: rights chain-of-title, contract terms, metadata standards, and market-specific regulations
 - Outcome Focus: sell-through, margin by title, release predictability, and author/list growth
+- Human Approval Required: only for external writes, irreversible actions, or public-facing launches
 
 ## Division Map
-| Division | Lead Agent | Operator Agent |
-|---|---|---|
-| Acquisitions | Books & Publishing Acquisitions Lead | Books & Publishing Acquisitions Operator |
-| Editorial | Books & Publishing Editorial Lead | Books & Publishing Editorial Operator |
-| Design & Typesetting | Books & Publishing Design & Typesetting Lead | Books & Publishing Design & Typesetting Operator |
-| Production | Books & Publishing Production Lead | Books & Publishing Production Operator |
-| Rights & Licensing | Books & Publishing Rights & Licensing Lead | Books & Publishing Rights & Licensing Operator |
-| Sales & Distribution | Books & Publishing Sales & Distribution Lead | Books & Publishing Sales & Distribution Operator |
-| Publicity | Books & Publishing Publicity Lead | Books & Publishing Publicity Operator |
-| Author Relations | Books & Publishing Author Relations Lead | Books & Publishing Author Relations Operator |
+| Division | Profile | Lead Agent | Operator Agent |
+|---|---|---|---|
+| Acquisitions | strategy | Books & Publishing Acquisitions Lead | Books & Publishing Acquisitions Operator |
+| Editorial | creative | Books & Publishing Editorial Lead | Books & Publishing Editorial Operator |
+| Design & Typesetting | creative | Books & Publishing Design & Typesetting Lead | Books & Publishing Design & Typesetting Operator |
+| Production | operations | Books & Publishing Production Lead | Books & Publishing Production Operator |
+| Rights & Licensing | governance | Books & Publishing Rights & Licensing Lead | Books & Publishing Rights & Licensing Operator |
+| Sales & Distribution | growth | Books & Publishing Sales & Distribution Lead | Books & Publishing Sales & Distribution Operator |
+| Publicity | growth | Books & Publishing Publicity Lead | Books & Publishing Publicity Operator |
+| Author Relations | service | Books & Publishing Author Relations Lead | Books & Publishing Author Relations Operator |
 
 ## Stage-Gate Model
-1. Discovery: baseline metrics, risk framing, and scope boundaries.
-2. Planning: roadmap, owners, dependencies, and acceptance criteria.
-3. Execution: lead/operator delivery loops by division.
-4. Validation: QA/compliance checks with evidence artifacts.
-5. Launch/Ops: handover completeness and operating review cadence.
+1. Discovery: baseline metrics, risk framing, source map, and scope boundaries.
+2. Planning: roadmap, owners, dependencies, acceptance criteria, and eval set definition.
+3. Execution: lead/operator delivery loops by division using structured handoffs.
+4. Validation: QA, approval, citation, and policy checks with evidence artifacts.
+5. Launch/Ops: handover completeness, live monitoring, and rollback or escalation readiness.
+
+## Reliability Rules
+- Consequential actions require human approval according to the agent prompt.
+- Policy, regulatory, legal, medical, or contractual claims require source, jurisdiction, and effective date when applicable.
+- Final outputs should follow the structured contracts embedded in each agent file.
+- Every prompt, model, tool, or policy change should trigger reevaluation before rollout.
 
 ## Agent Files
 - Orchestrator: [agents/books-publishing-orchestrator.md](agents/books-publishing-orchestrator.md)
@@ -52,5 +59,5 @@ This pack defines a full operating model for Books & Publishing with one orchest
 Activate Books & Publishing Orchestrator.
 Objective: Acquire, produce, and scale profitable title portfolios across print, digital, and audio channels.
 Run the stage-gate model end to end with evidence-backed pass/fail decisions.
-Require lead/operator handoffs in every division and escalate critical blockers within one cycle.
+Require structured outputs, explicit citations for policy claims, and human approval before consequential actions.
 ```
