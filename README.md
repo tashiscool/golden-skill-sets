@@ -82,6 +82,16 @@ This pack includes:
 - Image, WAN/LTX2 motion, and render-routing agents
 - Dialogue/audio planning, stitch editing, and skeptical final QA
 
+### Option 6: AI-Native Music Video Pipeline Division
+
+Need track-to-timecode-to-edit workflows? Use the dedicated music video division in [`music-video-ai/`](music-video-ai/README.md).
+
+This pack includes:
+- Track bible and timecode mapping agents
+- Performance continuity, motif, and shotboard agents
+- Image, WAN/LTX2 motion, and lyric-performance agents
+- Render routing, rhythm conform, and skeptical final QA
+
 ---
 
 ## 🎨 The Agency Roster
@@ -231,6 +241,27 @@ AI-native screenplay, image, motion, audio, and editorial workflows with continu
 | 🔊 [Film & TV Dialogue & Audio Beat Planner](film-tv-ai/film-tv-ai-dialogue-audio-beat-planner.md) | Dialogue timing, voice casting, ambience, ADR/TTS maps | Giving audio the same artifact rigor as visuals |
 | ✂️ [Film & TV Stitch Editor](film-tv-ai/film-tv-ai-stitch-editor.md) | Stitch order, transitions, trims, assembly logic | Turning generated assets into readable sequences |
 | 🔎 [Film & TV Continuity Reality Checker](film-tv-ai/film-tv-ai-continuity-reality-checker.md) | Final continuity, sync, pacing, and readiness QA | Blocking false-ready approvals before delivery |
+
+### 🎵 Music Video AI Division
+
+AI-native track, timecode, performance, motion, and rhythm-edit workflows for music videos that need more than loose prompt styling.
+
+| Agent | Specialty | When to Use |
+|-------|-----------|-------------|
+| 🎛️ [Music Video AI Orchestrator](music-video-ai/music-video-ai-orchestrator.md) | End-to-end music video pipeline orchestration | Running track-to-delivery workflows with section, hook, and cut gates |
+| 🎼 [Music Video Track Bible Architect](music-video-ai/music-video-ai-track-bible-architect.md) | Track intent, motif registry, source constraints | Locking the song's visual and editorial source of truth |
+| ⏱️ [Music Video Structure & Timecode Mapper](music-video-ai/music-video-ai-structure-timecode-mapper.md) | Section maps, hook moments, sync-critical timing | Turning a track into machine-readable section and cue artifacts |
+| 👤 [Music Video Performance Continuity Director](music-video-ai/music-video-ai-performance-continuity-director.md) | Performer look locks, wardrobe states, set continuity | Keeping identity and location logic stable across sections |
+| 🌈 [Music Video Visual Motif Planner](music-video-ai/music-video-ai-visual-motif-planner.md) | Section-level visual language and motif recurrence | Designing visual coherence and contrast across the song |
+| 🧾 [Music Video Shotboard Director](music-video-ai/music-video-ai-shotboard-director.md) | Coverage planning and board-ready frames | Building the exact coverage the cut actually needs |
+| 🖼️ [Music Video Seed Image Prompt Engineer](music-video-ai/music-video-ai-seed-image-prompt-engineer.md) | Seed-image and keyframe prompt packages | Creating section-aligned conditioning inputs and stills |
+| 🌊 [Music Video WAN I2V Director](music-video-ai/music-video-ai-wan-i2v-director.md) | Image-to-video performance motion direction | Preserving identity while adding section-appropriate movement |
+| 🕺 [Music Video Motion Reference Director](music-video-ai/music-video-ai-motion-reference-director.md) | Choreography, gesture, and path references | Stabilizing hook gestures and controlled movement shots |
+| 🎞️ [Music Video LTX2 Prompt Compiler](music-video-ai/music-video-ai-ltx2-prompt-compiler.md) | Clip cards and motion prompt compilation | Turning boards and seeds into render-ready motion packs |
+| 🎤 [Music Video Lyric Performance Planner](music-video-ai/music-video-ai-lyric-performance-planner.md) | Lyric timing, lip-sync risk, gesture cues | Mapping phrases and performance intent to exact time windows |
+| 🔀 [Music Video Model Router & Render Dispatcher](music-video-ai/music-video-ai-model-router-render-dispatcher.md) | Render queue routing and retry classification | Dispatching assets safely across models and profiles |
+| ✂️ [Music Video Rhythm Edit Conformer](music-video-ai/music-video-ai-rhythm-edit-conformer.md) | Beat-aware cut assembly and track conform | Aligning clips, transitions, and trims to the song |
+| 🔎 [Music Video Continuity Reality Checker](music-video-ai/music-video-ai-continuity-reality-checker.md) | Final sync, continuity, and readiness QA | Blocking false-ready approvals before delivery |
 
 ### 🎮 Game Development Division
 

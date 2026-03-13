@@ -23,6 +23,7 @@ AGENT_DIRS=(
   spatial-computing
   specialized
   film-tv-ai
+  music-video-ai
 )
 
 REQUIRED_FRONTMATTER=("name" "description" "color")
