@@ -11,6 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SCENARIOS = ROOT / "evals" / "scenarios"
+RUBRICS = ROOT / "evals" / "rubrics"
 
 AGENT_DIRS = [
     "extended-agents/design",
@@ -98,6 +99,7 @@ def validate() -> list[str]:
             "required_behaviors",
             "forbidden_behaviors",
             "expected_output",
+            "rubric",
         ]:
             if field not in scenario:
                 errors.append(f"{path}: missing {field}")
@@ -136,6 +138,74 @@ def validate() -> list[str]:
                 for heading in ["# Expected Output Shape"]:
                     if heading not in expected_text:
                         errors.append(f"{expected_path}: missing heading {heading}")
+
+        rubric_rel = scenario.get("rubric")
+        if rubric_rel:
+            rubric_path = (path.parent / rubric_rel).resolve()
+        elif scenario_id:
+            rubric_path = RUBRICS / f"{scenario_id}.json"
+            errors.append(f"{path}: missing rubric field; expected ../rubrics/{scenario_id}.json")
+        else:
+            rubric_path = None
+
+        if rubric_path:
+            try:
+                rubric_path.relative_to(ROOT)
+            except ValueError:
+                errors.append(f"{path}: rubric escapes repo")
+                continue
+            if not rubric_path.exists():
+                errors.append(f"{path}: missing rubric {rubric_path.relative_to(ROOT)}")
+            else:
+                try:
+                    rubric = json.loads(rubric_path.read_text())
+                except json.JSONDecodeError as exc:
+                    errors.append(f"{rubric_path}: invalid json: {exc}")
+                    continue
+                if rubric.get("id") != scenario_id:
+                    errors.append(f"{rubric_path}: id must match scenario id {scenario_id}")
+                if not isinstance(rubric.get("minimum_score"), int) or rubric["minimum_score"] < 1:
+                    errors.append(f"{rubric_path}: minimum_score must be a positive integer")
+                for list_field in [
+                    "expected_skills",
+                    "required_behaviors",
+                    "forbidden_behaviors",
+                    "evidence_quality",
+                    "human_gate_compliance",
+                ]:
+                    value = rubric.get(list_field)
+                    if not isinstance(value, list) or not value:
+                        errors.append(f"{rubric_path}: {list_field} must be a non-empty list")
+                if isinstance(rubric.get("expected_skills"), list):
+                    for skill in rubric["expected_skills"]:
+                        if skill not in scenario.get("expected_skills", []):
+                            errors.append(f"{rubric_path}: unexpected rubric skill {skill}")
+                criteria = rubric.get("criteria")
+                if not isinstance(criteria, list) or not criteria:
+                    errors.append(f"{rubric_path}: criteria must be a non-empty list")
+                else:
+                    seen_criteria: set[str] = set()
+                    for criterion in criteria:
+                        if not isinstance(criterion, dict):
+                            errors.append(f"{rubric_path}: each criterion must be an object")
+                            continue
+                        cid = criterion.get("id")
+                        if not cid:
+                            errors.append(f"{rubric_path}: criterion missing id")
+                        elif cid in seen_criteria:
+                            errors.append(f"{rubric_path}: duplicate criterion id {cid}")
+                        else:
+                            seen_criteria.add(cid)
+                        if not criterion.get("description"):
+                            errors.append(f"{rubric_path}: criterion {cid} missing description")
+                        terms = criterion.get("required_terms")
+                        if not isinstance(terms, list) or not terms:
+                            errors.append(f"{rubric_path}: criterion {cid} requires non-empty required_terms")
+                        if not isinstance(criterion.get("weight"), int) or criterion["weight"] < 1:
+                            errors.append(f"{rubric_path}: criterion {cid} weight must be positive integer")
+                forbidden_terms = rubric.get("forbidden_terms")
+                if not isinstance(forbidden_terms, list):
+                    errors.append(f"{rubric_path}: forbidden_terms must be a list")
 
     required_scenarios = {
         "ambiguous-legacy-refactor",

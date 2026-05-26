@@ -22,5 +22,6 @@
     "Add time-sensitive external facts without source or update plan.",
     "Skip review of the draft against use cases."
   ],
-  "expected_output": "../expected/skill-authoring.md"
+  "expected_output": "../expected/skill-authoring.md",
+  "rubric": "../rubrics/skill-authoring.json"
 }

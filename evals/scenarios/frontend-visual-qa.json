@@ -25,5 +25,6 @@
     "Use visual polish as a substitute for form behavior.",
     "Skip accessibility considerations."
   ],
-  "expected_output": "../expected/frontend-visual-qa.md"
+  "expected_output": "../expected/frontend-visual-qa.md",
+  "rubric": "../rubrics/frontend-visual-qa.json"
 }

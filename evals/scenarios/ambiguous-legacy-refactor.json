@@ -22,5 +22,6 @@
     "Change public API or persistence behavior without approval.",
     "Claim performance improvement without measurement."
   ],
-  "expected_output": "../expected/ambiguous-legacy-refactor.md"
+  "expected_output": "../expected/ambiguous-legacy-refactor.md",
+  "rubric": "../rubrics/ambiguous-legacy-refactor.json"
 }

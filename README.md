@@ -1,6 +1,6 @@
 # Golden Skill Sets
 
-A bounded, human-accountable skill system for agentic coding.
+A bounded, human-accountable Workflow OS for agentic coding.
 
 This repository is the canonical source for the golden workflow skills under `skills/`, plus the extended Agency specialist roster under `extended-agents/`.
 
@@ -13,7 +13,9 @@ The point is not to automate as much as possible. The point is to shorten feedba
 | `skills/` | The curated golden workflow skills. This is the install source. |
 | `docs/golden/` | The quality standard for what counts as golden. |
 | `evals/scenarios/` | Complex scenario fixtures used to validate expected behavior. |
-| `evals/expected/` | Expected output shapes and rubrics for each scenario. |
+| `evals/rubrics/` | Deterministic rubric metadata for each scenario. |
+| `evals/expected/` | Expected output shapes for each scenario. |
+| `evals/runs/` | Generated runtime eval artifacts. |
 | `extended-agents/` | Preserved Agency specialist roster and domain packs. |
 | `archive/` | Historical/reference material that is not part of the active install source. |
 
@@ -66,29 +68,38 @@ It runs:
 ```bash
 ./scripts/validate-skills.py
 ./scripts/validate-golden-evals.py
+./scripts/validate-runtime-runs.py
 ./scripts/lint-agents.sh
 ```
 
 Current expected baseline:
 
 - 19 canonical skills validate.
-- 6 complex scenarios validate.
+- 6 complex scenarios and rubrics validate.
 - Extended Agency agents lint with warnings allowed and errors forbidden.
 
-## Runtime Smoke Test
+## Runtime Evals
 
-After syncing and restarting Codex, run:
+Generate pending artifacts to verify the harness:
 
-```text
-Use zoom-out on this repo and summarize how the agent skill setup fits together. Do not edit files.
+```bash
+./scripts/run-runtime-evals.py --dry-run
+./scripts/validate-runtime-runs.py --require-run
 ```
 
-Expected behavior:
+For real evidence, run the high-risk scenarios with recorded or command-generated responses:
 
-- `zoom-out` loads.
-- The agent reads the repo policy/docs.
-- The agent summarizes the system.
-- No files are edited.
+```bash
+./scripts/run-runtime-evals.py --responses tmp/runtime-responses \
+  --run-id high-risk-recorded \
+  ambiguous-legacy-refactor \
+  production-regression-diagnosis \
+  issue-triage-human-gate
+
+./scripts/validate-runtime-runs.py --run-id high-risk-recorded --require-run --strict
+```
+
+See `docs/golden/RUNTIME_EVALS.md`.
 
 ## Extended Agents
 
@@ -103,6 +114,12 @@ Use them as specialist pairings inside approved scope:
 - film, TV, music video, game, and spatial computing pipelines
 
 The industry pack expansion is preserved under `extended-agents/industries/`. The generator now targets that path.
+
+## Promotion
+
+Candidates start in `extended-agents/` or `archive/`. Promotion into `skills/` requires a scenario fixture, rubric, expected output shape, static validation, at least one runtime eval, and human review.
+
+See `docs/golden/GOLDEN_STANDARD.md`.
 
 ## Provenance
 

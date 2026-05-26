@@ -24,5 +24,6 @@
     "Declare fixed without rerunning the original loop.",
     "Ignore business context around conversion."
   ],
-  "expected_output": "../expected/production-regression-diagnosis.md"
+  "expected_output": "../expected/production-regression-diagnosis.md",
+  "rubric": "../rubrics/production-regression-diagnosis.json"
 }

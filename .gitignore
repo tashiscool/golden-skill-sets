@@ -93,3 +93,8 @@ extended-agents/integrations/qwen/
 
 # Local archives that should not be published as part of the canonical repo.
 archive/paperclip/
+
+# Runtime eval artifacts are generated locally. Commit scenario fixtures and
+# rubrics, but not ordinary run outputs.
+evals/runs/*
+!evals/runs/.gitkeep

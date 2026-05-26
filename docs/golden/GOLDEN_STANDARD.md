@@ -1,12 +1,16 @@
 # Golden Standard
 
-Golden Skill Sets is not just a large roster of agents. The golden version is a curated system with:
+Golden Skill Sets is a Workflow OS for bounded, human-accountable agentic coding. It is intentionally smaller than the full Agency roster: the core controls how work is planned, gated, tested, reviewed, and handed off; specialists stay available as scoped extensions.
 
-- a bounded engineering workflow
-- specialist agents used inside explicit scope
-- human approval gates for architecture, issue-tracker, dependency, and git-history changes
-- scenario tests with expected outputs
-- validation scripts that catch drift
+## Tiers
+
+| Tier | Path | Role | Release status |
+| --- | --- | --- | --- |
+| Core | `skills/` | Managed golden workflow skills that shape default agent behavior. | Installed and validated. |
+| Extended | `extended-agents/` | Specialist agents, media pipelines, and industry packs used inside approved scope. | Preserved and linted, not installed as core. |
+| Archive | `archive/` | Upstream/reference material and historical imports. | Reference only. |
+
+The v1 core contains 19 skills. Broad specialist agents are not promoted into core unless they control reusable workflow behavior and pass the promotion process below.
 
 ## Quality Bar
 
@@ -18,7 +22,7 @@ An agent or skill is golden only when it satisfies all five bars.
 | Evidence | Claims are backed by tests, screenshots, logs, citations, or explicit assumptions. |
 | Output | The expected deliverable shape is concrete enough to evaluate. |
 | Safety | Destructive, architectural, broad, or external write actions require approval. |
-| Composability | The agent can be paired with workflow skills and specialist agents without taking over the whole process. |
+| Composability | The agent can pair with workflow skills and specialist agents without taking over the whole process. |
 
 ## Golden Workflow Core
 
@@ -31,13 +35,10 @@ Use these workflow skills to control the work:
 - `diagnose` for bugs, regressions, and performance issues.
 - `handoff` for continuity.
 - `review` for Standards vs Spec review.
-
-Use Agency specialist agents for domain execution:
-
-- Engineering: frontend, backend, security, data, DevOps, code review.
-- Testing: API, evidence, reality checking, performance, accessibility.
-- Planning: project shepherd, sprint prioritizer, workflow task decomposition.
-- Domain packs: marketing, media, games, spatial computing, industry packs.
+- `setup-pre-commit` and `git-guardrails-claude-code` for local safety rails.
+- `write-a-skill` for new reusable skill authoring.
+- `prototype` for throwaway exploration.
+- `improve-codebase-architecture` as advisory architecture analysis.
 
 The generalized Paperclip-derived workflow agents are promoted as canonical golden skills:
 
@@ -46,7 +47,18 @@ The generalized Paperclip-derived workflow agents are promoted as canonical gold
 - `agency-stalled-work-diagnostician`
 - `agency-bounded-iteration-driver`
 
-Their extended-agent source material is also preserved under `extended-agents/specialized/`.
+Their extended-agent source material is preserved under `extended-agents/specialized/`.
+
+## Extended Agents
+
+Use Agency specialist agents only inside an approved scope:
+
+- Engineering: frontend, backend, security, data, DevOps, code review.
+- Testing: API, evidence, reality checking, performance, accessibility.
+- Planning: project shepherd, sprint prioritizer, workflow task decomposition.
+- Domain packs: marketing, media, games, spatial computing, and industries.
+
+Industry pack extensions remain under `extended-agents/industries/`. They are valuable domain context, but they do not become core unless they generalize into reusable workflow control.
 
 ## Human Gates
 
@@ -61,14 +73,40 @@ The following actions require explicit approval unless the user directly request
 - staging, committing, pushing, or opening PRs
 - destructive git or filesystem commands
 
+## Promotion Process
+
+Promotion into `skills/` requires evidence, not taste.
+
+1. Start the candidate in `extended-agents/` or `archive/`.
+2. Generalize it into workflow behavior rather than domain-only expertise.
+3. Add or update a fixture in `evals/scenarios/`.
+4. Add a matching rubric in `evals/rubrics/`.
+5. Add an expected output shape in `evals/expected/`.
+6. Pass static validation with `./scripts/validate-golden.sh`.
+7. Pass at least one runtime eval and save the run artifacts for review.
+8. Move the skill into `skills/` only after the evidence supports promotion.
+
 ## Evaluation Strategy
 
 Golden validation has two layers.
 
-1. **Static validation**: scenario fixtures, expected outputs, required headings, forbidden behavior, and skill references are checked by `scripts/validate-golden-evals.py`.
-2. **Runtime validation**: after restarting Codex, run the prompts in `evals/scenarios/` and compare responses to `evals/expected/`.
+1. Static validation proves the repo has a coherent executable test specification.
+2. Runtime validation proves the active agent setup follows that specification in real scenario responses.
 
-Static validation does not prove model behavior. It proves the repo has an executable test specification. Runtime validation proves the active agent setup follows it.
+Static validation is required for every release:
+
+```bash
+./scripts/validate-golden.sh
+```
+
+Runtime validation is required before claiming the setup is working well enough to publish as golden:
+
+```bash
+./scripts/run-runtime-evals.py --dry-run
+./scripts/validate-runtime-runs.py --require-run
+```
+
+Use recorded or command-generated responses for real scoring. See `docs/golden/RUNTIME_EVALS.md`.
 
 ## Current Scenario Suite
 
@@ -85,12 +123,8 @@ Static validation does not prove model behavior. It proves the repo has an execu
 
 Do not call a set of agents "golden" unless:
 
-```sh
-./scripts/validate-golden.sh
-```
-
-passes, and at least the high-risk runtime scenarios have been manually smoke-tested:
-
-- `ambiguous-legacy-refactor`
-- `production-regression-diagnosis`
-- `issue-triage-human-gate`
+- `./scripts/validate-golden.sh` passes.
+- Every scenario has a rubric.
+- Runtime eval artifacts exist for the high-risk scenarios.
+- No runtime response violates forbidden behaviors.
+- Installed Codex skills can be regenerated from this repo with `./scripts/sync-installed-skills.sh`.

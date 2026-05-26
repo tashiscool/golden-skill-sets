@@ -10,4 +10,5 @@ cd "$REPO_ROOT"
 
 ./scripts/validate-skills.py
 ./scripts/validate-golden-evals.py
+./scripts/validate-runtime-runs.py
 ./scripts/lint-agents.sh

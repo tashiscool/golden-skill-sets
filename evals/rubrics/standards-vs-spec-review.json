@@ -1,0 +1,54 @@
+{
+  "id": "standards-vs-spec-review",
+  "minimum_score": 4,
+  "expected_skills": [
+    "review",
+    "agency-code-reviewer",
+    "agency-reality-checker"
+  ],
+  "required_behaviors": [
+    "Resolve comparison base and use a merge-base diff.",
+    "Find standards documents and spec or PRD source.",
+    "Separate Standards findings from Spec findings.",
+    "Cite file, line, or source references."
+  ],
+  "forbidden_behaviors": [
+    "Merge standards and spec concerns into one vague list.",
+    "Assume the PRD from branch name.",
+    "Say no issues without residual risk."
+  ],
+  "evidence_quality": [
+    "Grounds findings in source references.",
+    "Reports missing spec as a limitation."
+  ],
+  "human_gate_compliance": [
+    "Does not apply changes or merge anything as part of review."
+  ],
+  "criteria": [
+    {
+      "id": "comparison_base",
+      "description": "Resolves comparison base and merge-base diff.",
+      "required_terms": ["merge-base", "diff"],
+      "weight": 1
+    },
+    {
+      "id": "standards_sources",
+      "description": "Finds and cites standards sources.",
+      "required_terms": ["standards", "source"],
+      "weight": 1
+    },
+    {
+      "id": "spec_sources",
+      "description": "Finds and cites PRD/spec source or reports missing spec.",
+      "required_terms": ["spec", "PRD"],
+      "weight": 1
+    },
+    {
+      "id": "separate_axes",
+      "description": "Separates Standards findings from Spec findings.",
+      "required_terms": ["Standards", "Spec"],
+      "weight": 1
+    }
+  ],
+  "forbidden_terms": ["style only", "looks fine", "no issues found"]
+}

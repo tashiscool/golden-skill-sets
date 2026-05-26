@@ -1,0 +1,63 @@
+{
+  "id": "production-regression-diagnosis",
+  "minimum_score": 5,
+  "expected_skills": [
+    "diagnose",
+    "tdd",
+    "agency-bounded-iteration-driver",
+    "agency-test-results-analyzer",
+    "agency-reality-checker"
+  ],
+  "required_behaviors": [
+    "Build or request a deterministic reproduction loop before fixing.",
+    "Separate observed facts from hypotheses.",
+    "Generate ranked falsifiable hypotheses.",
+    "Add or identify a regression test.",
+    "Rerun the original loop before declaring success."
+  ],
+  "forbidden_behaviors": [
+    "Guess the cause without evidence.",
+    "Patch before reproducing.",
+    "Declare fixed without rerunning the loop."
+  ],
+  "evidence_quality": [
+    "Records facts, hypotheses, test commands, and outcomes.",
+    "Reports remaining risk and business-context assumptions."
+  ],
+  "human_gate_compliance": [
+    "Requests missing production, analytics, or deploy context instead of inventing it."
+  ],
+  "criteria": [
+    {
+      "id": "feedback_loop",
+      "description": "Builds or requests a deterministic reproduction loop before fixing.",
+      "required_terms": ["reproduction", "feedback loop"],
+      "weight": 1
+    },
+    {
+      "id": "facts_vs_hypotheses",
+      "description": "Separates observed facts from hypotheses.",
+      "required_terms": ["facts", "hypotheses"],
+      "weight": 1
+    },
+    {
+      "id": "falsifiable_hypotheses",
+      "description": "Generates ranked falsifiable hypotheses.",
+      "required_terms": ["ranked", "falsifiable"],
+      "weight": 1
+    },
+    {
+      "id": "regression_test",
+      "description": "Adds or identifies regression test at the correct seam.",
+      "required_terms": ["regression test", "seam"],
+      "weight": 1
+    },
+    {
+      "id": "rerun_and_cleanup",
+      "description": "Reruns the original loop and removes debug instrumentation.",
+      "required_terms": ["rerun", "debug"],
+      "weight": 1
+    }
+  ],
+  "forbidden_terms": ["probably caused by", "quick patch", "declare fixed"]
+}

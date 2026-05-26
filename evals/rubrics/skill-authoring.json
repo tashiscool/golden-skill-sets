@@ -1,0 +1,55 @@
+{
+  "id": "skill-authoring",
+  "minimum_score": 4,
+  "expected_skills": [
+    "write-a-skill",
+    "grill-with-docs",
+    "agency-technical-writer",
+    "agency-tool-evaluator"
+  ],
+  "required_behaviors": [
+    "Gather migration review requirements before drafting.",
+    "Define clear trigger language.",
+    "Keep SKILL.md concise and use references for depth.",
+    "Provide validation checklist or scenario."
+  ],
+  "forbidden_behaviors": [
+    "Create a vague generic helper skill.",
+    "Hide trigger conditions deep in the body.",
+    "Skip review against use cases."
+  ],
+  "evidence_quality": [
+    "Shows example use cases or scenario checks.",
+    "Explains why scripts or references are needed if added."
+  ],
+  "human_gate_compliance": [
+    "Asks for unclear domain constraints before finalizing the skill."
+  ],
+  "criteria": [
+    {
+      "id": "requirements",
+      "description": "Gathers task/domain requirements before drafting.",
+      "required_terms": ["requirements", "use cases"],
+      "weight": 1
+    },
+    {
+      "id": "trigger_language",
+      "description": "Defines clear trigger language in frontmatter description.",
+      "required_terms": ["description", "Use when"],
+      "weight": 1
+    },
+    {
+      "id": "structure",
+      "description": "Keeps SKILL.md concise and splits references as needed.",
+      "required_terms": ["SKILL.md", "reference"],
+      "weight": 1
+    },
+    {
+      "id": "validation",
+      "description": "Provides validation checklist or scenario.",
+      "required_terms": ["validation", "scenario"],
+      "weight": 1
+    }
+  ],
+  "forbidden_terms": ["generic helper", "no examples needed", "skip review"]
+}

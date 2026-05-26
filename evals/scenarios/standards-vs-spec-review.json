@@ -21,5 +21,6 @@
     "Assume the PRD from branch name without evidence.",
     "Say no issues without noting test gaps or residual risk."
   ],
-  "expected_output": "../expected/standards-vs-spec-review.md"
+  "expected_output": "../expected/standards-vs-spec-review.md",
+  "rubric": "../rubrics/standards-vs-spec-review.json"
 }

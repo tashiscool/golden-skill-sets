@@ -20,6 +20,7 @@ Run:
 For golden workflow changes, also update scenario coverage when behavior changes:
 
 - `evals/scenarios/`
+- `evals/rubrics/`
 - `evals/expected/`
 
 ## Golden Skill Requirements
@@ -66,6 +67,21 @@ Recommended sections:
 
 The linter allows warnings for legacy extended agents, but new or upgraded agents should aim to remove warnings.
 
+## Promotion Into Core
+
+New core skills should not start directly in `skills/` unless they are already proven workflow controls. Most candidates start in `extended-agents/` or `archive/`.
+
+Promotion requires:
+
+- a clear workflow-control reason for being core
+- a scenario fixture in `evals/scenarios/`
+- a rubric in `evals/rubrics/`
+- an expected output shape in `evals/expected/`
+- passing `./scripts/validate-golden.sh`
+- at least one runtime eval artifact for review
+
+Industry packs remain under `extended-agents/industries/` unless they generalize into reusable workflow behavior.
+
 ## Scenario Tests
 
 Scenario fixtures are JSON files with:
@@ -78,13 +94,17 @@ Scenario fixtures are JSON files with:
 - `required_behaviors`
 - `forbidden_behaviors`
 - `expected_output`
+- `rubric`
 
 Expected output files should describe the shape of a good answer, not a brittle exact transcript.
+
+Rubric files should define required behaviors, forbidden terms, expected skills, evidence quality, and human-gate compliance through criteria that can be scored deterministically.
 
 ## Pull Request Checklist
 
 - [ ] `./scripts/validate-golden.sh` passes.
-- [ ] Golden behavior changes include scenario or expected-output updates.
+- [ ] Golden behavior changes include scenario, rubric, or expected-output updates.
+- [ ] Runtime eval evidence exists when promoting a skill into core.
 - [ ] New skills or agents have clear trigger/use language.
 - [ ] Human gates are preserved for risky actions.
 - [ ] No local paths, secrets, tokens, or private workspace assumptions are introduced.

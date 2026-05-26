@@ -21,5 +21,6 @@
     "Post issue comments without the AI triage disclaimer.",
     "Invent missing acceptance criteria."
   ],
-  "expected_output": "../expected/issue-triage-human-gate.md"
+  "expected_output": "../expected/issue-triage-human-gate.md",
+  "rubric": "../rubrics/issue-triage-human-gate.json"
 }

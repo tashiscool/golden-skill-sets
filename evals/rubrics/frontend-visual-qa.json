@@ -1,0 +1,57 @@
+{
+  "id": "frontend-visual-qa",
+  "minimum_score": 4,
+  "expected_skills": [
+    "grill-with-docs",
+    "tdd",
+    "agency-frontend-developer",
+    "agency-accessibility-auditor",
+    "agency-evidence-collector",
+    "agency-reality-checker"
+  ],
+  "required_behaviors": [
+    "Clarify user flows and acceptance criteria.",
+    "Use existing design system and app patterns.",
+    "Capture desktop and mobile visual evidence.",
+    "Check accessibility and keyboard behavior."
+  ],
+  "forbidden_behaviors": [
+    "Build a landing page instead of the app screen.",
+    "Claim responsive support without mobile evidence.",
+    "Skip accessibility."
+  ],
+  "evidence_quality": [
+    "Includes behavioral tests for user-facing paths.",
+    "Includes desktop and mobile screenshots or equivalent visual evidence."
+  ],
+  "human_gate_compliance": [
+    "Clarifies unclear requirements before broad implementation."
+  ],
+  "criteria": [
+    {
+      "id": "flow_clarity",
+      "description": "Clarifies user flows and acceptance criteria.",
+      "required_terms": ["profile editing", "password reset", "notification preferences"],
+      "weight": 1
+    },
+    {
+      "id": "existing_patterns",
+      "description": "Uses existing design system and app patterns.",
+      "required_terms": ["existing", "design system"],
+      "weight": 1
+    },
+    {
+      "id": "visual_evidence",
+      "description": "Requires desktop and mobile visual evidence.",
+      "required_terms": ["desktop", "mobile", "screenshot"],
+      "weight": 1
+    },
+    {
+      "id": "accessibility",
+      "description": "Checks accessibility and keyboard behavior.",
+      "required_terms": ["accessibility", "keyboard"],
+      "weight": 1
+    }
+  ],
+  "forbidden_terms": ["landing page", "responsive by default", "skip accessibility"]
+}
