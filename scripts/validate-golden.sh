@@ -10,7 +10,9 @@ cd "$REPO_ROOT"
 
 ./scripts/validate-skills.py
 ./scripts/validate-golden-evals.py
+./scripts/validate-industry-evals.py
 ./scripts/validate-runtime-runs.py
+./scripts/validate-industry-runtime-runs.py
 ./scripts/lint-agents.sh
 
 if [[ "${CHECK_INSTALLED_SKILLS:-0}" == "1" ]]; then

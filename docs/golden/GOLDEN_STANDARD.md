@@ -12,6 +12,8 @@ Golden Skill Sets is a Workflow OS for bounded, human-accountable agentic coding
 
 The v1 core contains 19 skills. Broad specialist agents are not promoted into core unless they control reusable workflow behavior and pass the promotion process below.
 
+Industry packs can become certified Golden Industry Packs while remaining under `extended-agents/industries/`. Certification requires every agent in the pack to have scenario, rubric, expected-output, and runtime evidence. See `docs/golden/INDUSTRY_CERTIFICATION.md`.
+
 ## Quality Bar
 
 An agent or skill is golden only when it satisfies all five bars.
@@ -59,6 +61,8 @@ Use Agency specialist agents only inside an approved scope:
 - Domain packs: marketing, media, games, spatial computing, and industries.
 
 Industry pack extensions remain under `extended-agents/industries/`. They are valuable domain context, but they do not become core unless they generalize into reusable workflow control.
+
+The first certified trust-heavy tranche is Banking & Fintech, Healthcare Providers, Cybersecurity Industry, Legal Services, and Government/Public Sector.
 
 ## Human Gates
 
@@ -128,3 +132,4 @@ Do not call a set of agents "golden" unless:
 - Runtime eval artifacts exist for the high-risk scenarios.
 - No runtime response violates forbidden behaviors.
 - Installed Codex skills can be regenerated from this repo with `./scripts/sync-installed-skills.sh`.
+- Certified industry packs pass `./scripts/validate-industry-evals.py` and strict industry runtime validation for their release run.

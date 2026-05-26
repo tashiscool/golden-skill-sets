@@ -24,6 +24,7 @@ It is designed for people using tools such as Codex, Cursor, Claude Code, and Co
 | `evals/rubrics/` | Deterministic rubric metadata for each scenario. |
 | `evals/expected/` | Expected output shapes for each scenario. |
 | `evals/runs/` | Generated runtime eval artifacts. |
+| `evals/industries/` | Certification fixtures for golden industry packs. |
 | `extended-agents/` | Preserved Agency specialist roster and domain packs. |
 | `archive/` | Historical/reference material that is not part of the active install source. |
 
@@ -90,6 +91,7 @@ Current expected baseline:
 
 - 19 canonical skills validate.
 - 6 complex scenarios and rubrics validate.
+- 5 trust-heavy industry packs validate with every-agent certification fixtures.
 - Extended Agency agents lint with warnings allowed and errors forbidden.
 
 ## Runtime Evals
@@ -130,6 +132,8 @@ Use them as specialist pairings inside approved scope:
 - film, TV, music video, game, and spatial computing pipelines
 
 The industry pack expansion is preserved under `extended-agents/industries/`. The generator now targets that path.
+
+Trust-heavy industries can be certified as Golden Industry Packs without being promoted into the workflow core. See `docs/golden/INDUSTRY_CERTIFICATION.md` and `docs/golden/industry-scorecards/`.
 
 ## Promotion
 

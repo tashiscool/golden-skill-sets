@@ -99,3 +99,5 @@ archive/paperclip/
 # rubrics, but not ordinary run outputs.
 evals/runs/*
 !evals/runs/.gitkeep
+evals/industries/runs/*
+!evals/industries/runs/.gitkeep

@@ -59,3 +59,15 @@ The release should attach `golden-skill-sets-runtime-evals-v1.zip`, containing:
 - `summary.md`
 
 The release notes should include the commit SHA, CI status, validation summary, and a reminder that human review remains required.
+
+## Industry Certification Follow-On
+
+Trust-heavy industry certification is tracked separately from Evidence v1. The first tranche certifies:
+
+- Banking & Fintech
+- Healthcare Providers
+- Cybersecurity Industry
+- Legal Services
+- Government/Public Sector
+
+Each certified pack keeps its agents under `extended-agents/industries/` and adds every-agent proof under `evals/industries/`.
