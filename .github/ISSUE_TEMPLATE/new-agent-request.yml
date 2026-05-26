@@ -1,12 +1,12 @@
-name: New Agent Request
-description: Suggest a new agent to add to The Agency
+name: New Skill Or Agent Request
+description: Suggest a new golden workflow skill or extended specialist agent
 labels: ["enhancement", "new-agent"]
 body:
   - type: input
     id: agent-name
     attributes:
-      label: Agent Name
-      placeholder: e.g. Database Engineer
+      label: Skill or Agent Name
+      placeholder: e.g. Migration Risk Reviewer
     validations:
       required: true
 
@@ -15,6 +15,11 @@ body:
     attributes:
       label: Category
       options:
+        - golden workflow skill
+        - extended engineering agent
+        - extended testing agent
+        - extended product/project agent
+        - extended domain/industry agent
         - engineering
         - design
         - marketing
@@ -32,8 +37,8 @@ body:
   - type: textarea
     id: description
     attributes:
-      label: What would this agent do?
-      placeholder: Describe the agent's specialty, when you'd use it, and what gap it fills.
+      label: What would this skill or agent do?
+      placeholder: Describe its specialty, when you'd use it, and what gap it fills.
     validations:
       required: true
 

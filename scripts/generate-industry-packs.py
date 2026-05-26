@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Generate full industry agent packs for The Agency.
+"""Generate full industry agent packs for Golden Skill Sets.
 
-This generator creates 30 industry packs under industries/ with:
+This generator creates 30 industry packs under extended-agents/industries/ with:
 - 1 orchestrator agent per industry
 - 1 lead + 1 operator agent per division
 - per-industry README + master matrix
@@ -1964,7 +1964,7 @@ def render_pack_readme(industry: Industry) -> str:
 
 
 def generate(repo_root: Path) -> None:
-    out_dir = repo_root / "industries"
+    out_dir = repo_root / "extended-agents" / "industries"
 
     if out_dir.exists():
         for child in out_dir.iterdir():
@@ -1976,7 +1976,7 @@ def generate(repo_root: Path) -> None:
 
     readme = """# Industry Agent Packs
 
-This directory contains fully built industry packs that extend The Agency model beyond software-only workflows.
+This directory contains fully built industry packs that extend Golden Skill Sets beyond software-only workflows.
 
 Each industry pack contains:
 - 1 orchestrator agent

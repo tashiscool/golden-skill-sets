@@ -76,3 +76,20 @@ integrations/windsurf/.windsurfrules
 integrations/openclaw/*
 integrations/qwen/agents/
 !integrations/openclaw/README.md
+
+# Extended-agent generated integrations after canonical repo reshaping.
+extended-agents/integrations/antigravity/agency-*/
+extended-agents/integrations/gemini-cli/skills/
+extended-agents/integrations/gemini-cli/gemini-extension.json
+extended-agents/integrations/opencode/agents/
+extended-agents/integrations/opencode/agent/
+extended-agents/integrations/cursor/rules/
+extended-agents/integrations/aider/CONVENTIONS.md
+extended-agents/integrations/windsurf/.windsurfrules
+extended-agents/integrations/openclaw/*
+extended-agents/integrations/qwen/agents/
+extended-agents/integrations/qwen/
+!extended-agents/integrations/openclaw/README.md
+
+# Local archives that should not be published as part of the canonical repo.
+archive/paperclip/

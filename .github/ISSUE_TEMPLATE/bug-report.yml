@@ -6,7 +6,7 @@ body:
     id: agent-file
     attributes:
       label: Agent file
-      placeholder: e.g. engineering/engineering-frontend-developer.md
+      placeholder: e.g. skills/tdd/SKILL.md or extended-agents/engineering/engineering-frontend-developer.md
     validations:
       required: true
 

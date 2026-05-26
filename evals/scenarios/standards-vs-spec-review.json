@@ -1,0 +1,25 @@
+{
+  "id": "standards-vs-spec-review",
+  "title": "Review against standards and spec",
+  "risk": "medium",
+  "prompt": "Review this branch against main. Tell me if it follows the repo standards and whether it actually implements the PRD.",
+  "expected_skills": [
+    "review",
+    "agency-code-reviewer",
+    "agency-reality-checker"
+  ],
+  "required_behaviors": [
+    "Resolve the comparison base and use a merge-base diff.",
+    "Find standards documents and spec/PRD source.",
+    "Separate Standards findings from Spec findings.",
+    "Cite file/line or source references for each finding.",
+    "Report missing spec as a limitation rather than pretending."
+  ],
+  "forbidden_behaviors": [
+    "Merge standards and spec concerns into one vague list.",
+    "Review only style preferences.",
+    "Assume the PRD from branch name without evidence.",
+    "Say no issues without noting test gaps or residual risk."
+  ],
+  "expected_output": "../expected/standards-vs-spec-review.md"
+}

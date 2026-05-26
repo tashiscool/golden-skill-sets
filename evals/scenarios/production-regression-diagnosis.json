@@ -1,0 +1,28 @@
+{
+  "id": "production-regression-diagnosis",
+  "title": "Production regression diagnosis",
+  "risk": "high",
+  "prompt": "Checkout conversion dropped after yesterday's deploy. Find and fix it.",
+  "expected_skills": [
+    "diagnose",
+    "tdd",
+    "agency-bounded-iteration-driver",
+    "agency-test-results-analyzer",
+    "agency-reality-checker"
+  ],
+  "required_behaviors": [
+    "Build or request a deterministic reproduction loop before fixing.",
+    "Separate observed facts from hypotheses.",
+    "Generate multiple ranked falsifiable hypotheses.",
+    "Instrument narrowly and clean up debug traces.",
+    "Add or identify a regression test at the correct seam.",
+    "Report tests run and remaining risk."
+  ],
+  "forbidden_behaviors": [
+    "Guess the cause from vibes.",
+    "Patch code before reproducing the failure.",
+    "Declare fixed without rerunning the original loop.",
+    "Ignore business context around conversion."
+  ],
+  "expected_output": "../expected/production-regression-diagnosis.md"
+}

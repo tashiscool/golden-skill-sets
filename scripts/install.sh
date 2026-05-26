@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# install.sh -- Install The Agency agents into your local agentic tool(s).
+# install.sh -- Install extended agents into your local agentic tool(s).
 #
 # Reads converted files from integrations/ and copies them to the appropriate
 # config directory for each tool. Run scripts/convert.sh first if integrations/
@@ -13,12 +13,12 @@
 #   claude-code  -- Copy agents to ~/.claude/agents/
 #   copilot      -- Copy agents to ~/.github/agents/
 #   antigravity  -- Copy skills to ~/.gemini/antigravity/skills/
-#   gemini-cli   -- Install extension to ~/.gemini/extensions/agency-agents/
+#   gemini-cli   -- Install extension to ~/.gemini/extensions/golden-skill-sets/
 #   opencode     -- Copy agents to .opencode/agent/ in current directory
 #   cursor       -- Copy rules to .cursor/rules/ in current directory
 #   aider        -- Copy CONVENTIONS.md to current directory
 #   windsurf     -- Copy .windsurfrules to current directory
-#   openclaw     -- Copy workspaces to ~/.openclaw/agency-agents/
+#   openclaw     -- Copy workspaces to ~/.openclaw/golden-skill-sets/
 #   qwen         -- Copy SubAgents to ~/.qwen/agents/ (user-wide) or .qwen/agents/ (project)
 #   all          -- Install for all detected tools (default)
 #
@@ -172,7 +172,7 @@ interactive_select() {
     # --- header ---
     printf "\n"
     box_top
-    box_row "${C_BOLD}  The Agency -- Tool Installer${C_RESET}"
+    box_row "${C_BOLD}  Golden Skill Sets -- Tool Installer${C_RESET}"
     box_bot
     printf "\n"
     printf "  ${C_DIM}System scan:  [*] = detected on this machine${C_RESET}\n"
@@ -274,8 +274,11 @@ install_claude_code() {
   local count=0
   mkdir -p "$dest"
   local dir f first_line
-  for dir in design engineering game-development marketing paid-media sales product project-management \
-              testing support spatial-computing specialized film-tv-ai music-video-ai; do
+  for dir in extended-agents/design extended-agents/engineering extended-agents/game-development \
+              extended-agents/marketing extended-agents/paid-media extended-agents/sales \
+              extended-agents/product extended-agents/project-management extended-agents/testing \
+              extended-agents/support extended-agents/spatial-computing extended-agents/specialized \
+              extended-agents/film-tv-ai extended-agents/music-video-ai; do
     [[ -d "$REPO_ROOT/$dir" ]] || continue
     while IFS= read -r -d '' f; do
       first_line="$(head -1 "$f")"
@@ -292,8 +295,11 @@ install_copilot() {
   local count=0
   mkdir -p "$dest"
   local dir f first_line
-  for dir in design engineering game-development marketing paid-media sales product project-management \
-              testing support spatial-computing specialized film-tv-ai music-video-ai; do
+  for dir in extended-agents/design extended-agents/engineering extended-agents/game-development \
+              extended-agents/marketing extended-agents/paid-media extended-agents/sales \
+              extended-agents/product extended-agents/project-management extended-agents/testing \
+              extended-agents/support extended-agents/spatial-computing extended-agents/specialized \
+              extended-agents/film-tv-ai extended-agents/music-video-ai; do
     [[ -d "$REPO_ROOT/$dir" ]] || continue
     while IFS= read -r -d '' f; do
       first_line="$(head -1 "$f")"
@@ -323,7 +329,7 @@ install_antigravity() {
 
 install_gemini_cli() {
   local src="$INTEGRATIONS/gemini-cli"
-  local dest="${HOME}/.gemini/extensions/agency-agents"
+  local dest="${HOME}/.gemini/extensions/golden-skill-sets"
   local count=0
   local manifest="$src/gemini-extension.json"
   local skills_dir="$src/skills"
@@ -358,7 +364,7 @@ install_opencode() {
 
 install_openclaw() {
   local src="$INTEGRATIONS/openclaw"
-  local dest="${HOME}/.openclaw/agency-agents"
+  local dest="${HOME}/.openclaw/golden-skill-sets"
   local count=0
   [[ -d "$src" ]] || { err "integrations/openclaw missing. Run convert.sh first."; return 1; }
   mkdir -p "$dest"
@@ -503,7 +509,7 @@ main() {
 
   else
     # Non-interactive: auto-detect
-    header "The Agency -- Scanning for installed tools..."
+    header "Golden Skill Sets -- Scanning for installed tools..."
     printf "\n"
     local t
     for t in "${ALL_TOOLS[@]}"; do
@@ -525,7 +531,7 @@ main() {
   fi
 
   printf "\n"
-  header "The Agency -- Installing agents"
+  header "Golden Skill Sets -- Installing agents"
   printf "  Repo:       %s\n" "$REPO_ROOT"
   printf "  Installing: %s\n" "${SELECTED_TOOLS[*]}"
   printf "\n"

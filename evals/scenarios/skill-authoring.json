@@ -1,0 +1,26 @@
+{
+  "id": "skill-authoring",
+  "title": "Author a new reusable skill",
+  "risk": "low",
+  "prompt": "We keep doing migration risk reviews. Turn that into a reusable skill.",
+  "expected_skills": [
+    "write-a-skill",
+    "grill-with-docs",
+    "agency-technical-writer",
+    "agency-tool-evaluator"
+  ],
+  "required_behaviors": [
+    "Gather task/domain requirements before drafting.",
+    "Define clear trigger language in the description.",
+    "Keep SKILL.md concise and split references if needed.",
+    "Add deterministic scripts only when they improve reliability.",
+    "Provide a validation checklist or example scenario."
+  ],
+  "forbidden_behaviors": [
+    "Create a vague generic helper skill.",
+    "Bury trigger conditions deep in the body.",
+    "Add time-sensitive external facts without source or update plan.",
+    "Skip review of the draft against use cases."
+  ],
+  "expected_output": "../expected/skill-authoring.md"
+}

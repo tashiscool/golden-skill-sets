@@ -2,16 +2,16 @@
 
 <!-- Brief description of the change -->
 
-## Agent Information (if adding/modifying an agent)
+## Skill / Agent Information
 
-- **Agent Name**:
+- **Name**:
 - **Category**:
 - **Specialty**:
 
 ## Checklist
 
-- [ ] Follows the agent template structure from CONTRIBUTING.md
-- [ ] Includes YAML frontmatter with `name`, `description`, `color`
-- [ ] Has concrete code/template examples (for new agents)
-- [ ] Tested in real scenarios
+- [ ] `./scripts/validate-golden.sh` passes
+- [ ] Golden workflow changes update `evals/scenarios/` or `evals/expected/`
+- [ ] Includes clear trigger/use language
+- [ ] Preserves human approval gates for risky actions
 - [ ] Proofread and formatted correctly

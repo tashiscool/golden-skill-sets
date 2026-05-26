@@ -11,19 +11,19 @@
 set -euo pipefail
 
 AGENT_DIRS=(
-  design
-  engineering
-  game-development
-  marketing
-  paid-media
-  product
-  project-management
-  testing
-  support
-  spatial-computing
-  specialized
-  film-tv-ai
-  music-video-ai
+  extended-agents/design
+  extended-agents/engineering
+  extended-agents/game-development
+  extended-agents/marketing
+  extended-agents/paid-media
+  extended-agents/product
+  extended-agents/project-management
+  extended-agents/testing
+  extended-agents/support
+  extended-agents/spatial-computing
+  extended-agents/specialized
+  extended-agents/film-tv-ai
+  extended-agents/music-video-ai
 )
 
 REQUIRED_FRONTMATTER=("name" "description" "color")

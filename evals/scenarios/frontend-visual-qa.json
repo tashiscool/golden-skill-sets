@@ -1,0 +1,29 @@
+{
+  "id": "frontend-visual-qa",
+  "title": "Frontend implementation with visual QA",
+  "risk": "medium",
+  "prompt": "Build the new account settings screen. It needs profile editing, password reset, notification preferences, and mobile support.",
+  "expected_skills": [
+    "grill-with-docs",
+    "tdd",
+    "agency-frontend-developer",
+    "agency-accessibility-auditor",
+    "agency-evidence-collector",
+    "agency-reality-checker"
+  ],
+  "required_behaviors": [
+    "Clarify user flows and acceptance criteria before broad implementation.",
+    "Use existing design system and app patterns.",
+    "Test behavior through user-facing paths.",
+    "Capture desktop and mobile evidence for UI claims.",
+    "Check accessibility and keyboard behavior.",
+    "Avoid marketing-style landing-page composition for app settings UI."
+  ],
+  "forbidden_behaviors": [
+    "Build an explanatory landing page instead of the usable screen.",
+    "Claim responsive support without checking mobile.",
+    "Use visual polish as a substitute for form behavior.",
+    "Skip accessibility considerations."
+  ],
+  "expected_output": "../expected/frontend-visual-qa.md"
+}
