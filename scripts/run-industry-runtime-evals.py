@@ -16,7 +16,6 @@ ROOT = Path(__file__).resolve().parents[1]
 EVALS = ROOT / "evals" / "industries"
 SCENARIOS = EVALS / "scenarios"
 RUNS = EVALS / "runs"
-REFERENCE_RESPONSES = EVALS / "reference-responses" / "trust-heavy-v1"
 CERTIFICATION = EVALS / "certification.json"
 
 
@@ -63,6 +62,7 @@ def read_response(
     prompt_path: Path,
     responses_dir: Path | None,
     command: str | None,
+    run_id: str,
 ) -> tuple[str, str, bool]:
     if responses_dir:
         path = responses_dir / f"{scenario_id}.md"
@@ -88,7 +88,7 @@ def read_response(
             response += "\n\n## Command stderr\n\n```text\n" + completed.stderr + "\n```\n"
         return response, f"command:{command}", completed.returncode != 0
 
-    path = REFERENCE_RESPONSES / f"{scenario_id}.md"
+    path = EVALS / "reference-responses" / run_id / f"{scenario_id}.md"
     if not path.exists():
         raise SystemExit(f"missing reference response: {path}")
     return path.read_text(), f"reference:{path}", False
@@ -187,7 +187,7 @@ def main() -> int:
         prompt_path = scenario_dir / "prompt.md"
         prompt_path.write_text(render_prompt(scenario))
         response, source, pending = read_response(
-            scenario["id"], prompt_path, args.responses, args.command
+            scenario["id"], prompt_path, args.responses, args.command, run_id
         )
         scenario_dir.joinpath("response.md").write_text(response)
         score = score_response(scenario, rubric, response, pending, source)

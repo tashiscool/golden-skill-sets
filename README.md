@@ -91,7 +91,7 @@ Current expected baseline:
 
 - 19 canonical skills validate.
 - 6 complex scenarios and rubrics validate.
-- 5 trust-heavy industry packs validate with every-agent certification fixtures.
+- 30 industry packs validate with every-agent certification fixtures.
 - Extended Agency agents lint with warnings allowed and errors forbidden.
 
 ## Runtime Evals
@@ -133,7 +133,7 @@ Use them as specialist pairings inside approved scope:
 
 The industry pack expansion is preserved under `extended-agents/industries/`. The generator now targets that path.
 
-Trust-heavy industries can be certified as Golden Industry Packs without being promoted into the workflow core. See `docs/golden/INDUSTRY_CERTIFICATION.md` and `docs/golden/industry-scorecards/`.
+Industry packs are certified as Golden Industry Packs without being promoted into the workflow core. See `docs/golden/INDUSTRY_CERTIFICATION.md` and `docs/golden/industry-scorecards/`.
 
 ## Promotion
 

@@ -62,12 +62,6 @@ The release notes should include the commit SHA, CI status, validation summary, 
 
 ## Industry Certification Follow-On
 
-Trust-heavy industry certification is tracked separately from Evidence v1. The first tranche certifies:
-
-- Banking & Fintech
-- Healthcare Providers
-- Cybersecurity Industry
-- Legal Services
-- Government/Public Sector
+Industry certification is tracked separately from Evidence v1. All 30 generated industry packs now have every-agent proof under `evals/industries/`.
 
 Each certified pack keeps its agents under `extended-agents/industries/` and adds every-agent proof under `evals/industries/`.

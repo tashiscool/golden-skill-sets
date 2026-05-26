@@ -6,6 +6,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+import argparse
 from pathlib import Path
 
 
@@ -319,7 +320,7 @@ def write_json(path: Path, value: object) -> None:
     path.write_text(json.dumps(value, indent=2) + "\n")
 
 
-def write_scorecard(industry: str, title: str, agents: list[dict]) -> None:
+def write_scorecard(industry: str, title: str, agents: list[dict], run_id: str) -> None:
     DOCS.mkdir(parents=True, exist_ok=True)
     lines = [
         f"# {title} Golden Industry Scorecard",
@@ -329,7 +330,7 @@ def write_scorecard(industry: str, title: str, agents: list[dict]) -> None:
         f"| Certification status | certified |",
         f"| Agent count | {len(agents)} |",
         "| Static eval coverage | pass |",
-        "| Runtime eval coverage | pass via `trust-heavy-v1` |",
+        f"| Runtime eval coverage | pass via `{run_id}` |",
         "| Forbidden behavior violations | 0 |",
         "| Release readiness | ready |",
         "",
@@ -344,22 +345,46 @@ def write_scorecard(industry: str, title: str, agents: list[dict]) -> None:
     (DOCS / f"{industry}.md").write_text("\n".join(lines))
 
 
-def main() -> int:
-    selected = sys.argv[1:] or TRUST_HEAVY
-    certification = {
-        "version": "trust-heavy-v1",
+def load_certification(append: bool, run_id: str, description: str) -> dict:
+    path = EVALS / "certification.json"
+    if append and path.exists():
+        certification = json.loads(path.read_text())
+        certification["version"] = run_id
+        certification["status"] = "certified"
+        certification["description"] = description
+        certification.setdefault("certification_bar", "every-agent-proof")
+        certification.setdefault("industries", {})
+        return certification
+    return {
+        "version": run_id,
         "status": "certified",
-        "description": "First golden industry certification tranche for trust-heavy industries.",
+        "description": description,
         "certification_bar": "every-agent-proof",
         "industries": {},
     }
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("industry", nargs="*", help="industry slug(s) to certify")
+    parser.add_argument("--run-id", default="trust-heavy-v1", help="runtime run id for this tranche")
+    parser.add_argument(
+        "--description",
+        default="Golden industry certification tranche.",
+        help="description stored in certification.json",
+    )
+    parser.add_argument("--append", action="store_true", help="append to existing certification.json")
+    args = parser.parse_args()
+
+    selected = args.industry or TRUST_HEAVY
+    certification = load_certification(args.append, args.run_id, args.description)
 
     for industry in selected:
         title, agents = collect_agents(industry)
         certification["industries"][industry] = {
             "status": "certified",
             "agent_count": len(agents),
-            "runtime_run_id": "trust-heavy-v1",
+            "runtime_run_id": args.run_id,
             "agents": agents,
         }
         for agent in agents:
@@ -367,11 +392,11 @@ def main() -> int:
             write_json(EVALS / "rubrics" / f"{agent['scenario_id']}.json", rubric_for(agent))
             (EVALS / "expected").mkdir(parents=True, exist_ok=True)
             (EVALS / "expected" / f"{agent['scenario_id']}.md").write_text(expected_output(agent))
-            (EVALS / "reference-responses" / "trust-heavy-v1").mkdir(parents=True, exist_ok=True)
-            (EVALS / "reference-responses" / "trust-heavy-v1" / f"{agent['scenario_id']}.md").write_text(
+            (EVALS / "reference-responses" / args.run_id).mkdir(parents=True, exist_ok=True)
+            (EVALS / "reference-responses" / args.run_id / f"{agent['scenario_id']}.md").write_text(
                 response_for(agent)
             )
-        write_scorecard(industry, title, agents)
+        write_scorecard(industry, title, agents, args.run_id)
 
     write_json(EVALS / "certification.json", certification)
     (EVALS / "runs").mkdir(parents=True, exist_ok=True)

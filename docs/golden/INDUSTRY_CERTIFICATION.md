@@ -22,17 +22,18 @@ A golden industry agent must be:
 - resistant to untrusted input rewriting policy or approval logic
 - testable through runtime scenarios
 
-## Trust-Heavy V1
+## Certified Industry Packs
 
-The first certified tranche is:
+All 30 generated industry packs are certified with the every-agent-proof bar. Certification was completed in six tranches:
 
-- `banking-fintech`
-- `healthcare-providers`
-- `cybersecurity-industry`
-- `legal-services`
-- `government-public-sector`
+- `trust-heavy-v1`
+- `market-heavy-v1`
+- `media-heavy-v1`
+- `regulated-ops-v1`
+- `physical-ops-v1`
+- `community-consumer-v1`
 
-Certification uses the every-agent-proof bar: each orchestrator, lead, and operator has its own scenario, rubric, expected output shape, and runtime result.
+Each orchestrator, lead, and operator has its own scenario, rubric, expected output shape, and runtime result.
 
 ## Validation
 

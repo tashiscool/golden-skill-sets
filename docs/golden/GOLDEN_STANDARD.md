@@ -62,7 +62,7 @@ Use Agency specialist agents only inside an approved scope:
 
 Industry pack extensions remain under `extended-agents/industries/`. They are valuable domain context, but they do not become core unless they generalize into reusable workflow control.
 
-The first certified trust-heavy tranche is Banking & Fintech, Healthcare Providers, Cybersecurity Industry, Legal Services, and Government/Public Sector.
+All 30 generated industry packs are certified as Golden Industry Packs with every-agent scenario, rubric, expected-output, and runtime evidence.
 
 ## Human Gates
 
