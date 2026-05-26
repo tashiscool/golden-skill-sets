@@ -27,6 +27,10 @@ MANAGED_SKILLS = [
     "review",
     "setup-pre-commit",
     "git-guardrails-claude-code",
+    "agency-workflow-task-decomposition-coach",
+    "agency-persistent-memory-steward",
+    "agency-stalled-work-diagnostician",
+    "agency-bounded-iteration-driver",
 ]
 
 

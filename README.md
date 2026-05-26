@@ -36,6 +36,10 @@ The golden workflow skills are:
 - `review`
 - `setup-pre-commit`
 - `git-guardrails-claude-code`
+- `agency-workflow-task-decomposition-coach`
+- `agency-persistent-memory-steward`
+- `agency-stalled-work-diagnostician`
+- `agency-bounded-iteration-driver`
 
 Use them with the policy in `AGENTS.md`.
 
@@ -67,7 +71,7 @@ It runs:
 
 Current expected baseline:
 
-- 15 canonical skills validate.
+- 19 canonical skills validate.
 - 6 complex scenarios validate.
 - Extended Agency agents lint with warnings allowed and errors forbidden.
 
@@ -97,6 +101,8 @@ Use them as specialist pairings inside approved scope:
 - product and project management
 - marketing and industry workflows
 - film, TV, music video, game, and spatial computing pipelines
+
+The industry pack expansion is preserved under `extended-agents/industries/`. The generator now targets that path.
 
 ## Provenance
 

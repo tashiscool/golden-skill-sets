@@ -10,7 +10,7 @@ Validated the golden skill setup installed from `mattpocock/skills` into `/Users
 
 Result: PASS
 
-Checked 15 installed skills:
+Checked 19 installed skills:
 
 - `setup-matt-pocock-skills`
 - `grill-with-docs`
@@ -27,6 +27,10 @@ Checked 15 installed skills:
 - `review`
 - `setup-pre-commit`
 - `git-guardrails-claude-code`
+- `agency-workflow-task-decomposition-coach`
+- `agency-persistent-memory-steward`
+- `agency-stalled-work-diagnostician`
+- `agency-bounded-iteration-driver`
 
 Checks performed:
 

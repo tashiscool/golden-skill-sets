@@ -39,6 +39,10 @@ Do not hand-edit `/Users/tkhan/.codex/skills` for managed golden skills. Edit `s
 - `review`
 - `setup-pre-commit`
 - `git-guardrails-claude-code`
+- `agency-workflow-task-decomposition-coach`
+- `agency-persistent-memory-steward`
+- `agency-stalled-work-diagnostician`
+- `agency-bounded-iteration-driver`
 
 ## Validation
 

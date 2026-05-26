@@ -39,6 +39,15 @@ Use Agency specialist agents for domain execution:
 - Planning: project shepherd, sprint prioritizer, workflow task decomposition.
 - Domain packs: marketing, media, games, spatial computing, industry packs.
 
+The generalized Paperclip-derived workflow agents are promoted as canonical golden skills:
+
+- `agency-workflow-task-decomposition-coach`
+- `agency-persistent-memory-steward`
+- `agency-stalled-work-diagnostician`
+- `agency-bounded-iteration-driver`
+
+Their extended-agent source material is also preserved under `extended-agents/specialized/`.
+
 ## Human Gates
 
 The following actions require explicit approval unless the user directly requested the exact action:
