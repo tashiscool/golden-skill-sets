@@ -60,6 +60,7 @@ build/
 # Personal notes and scratch files
 scratch/
 notes/
+tmp/
 TODO.md
 NOTES.md
 

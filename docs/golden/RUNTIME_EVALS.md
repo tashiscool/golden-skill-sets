@@ -13,7 +13,7 @@ evals/runs/<timestamp>/<scenario-id>/score.json
 evals/runs/<timestamp>/summary.md
 ```
 
-Run directories are ignored by git by default because they are generated evidence. Promote selected reviewed runs manually only when they are useful as release artifacts.
+Run directories are ignored by git by default because they are generated evidence. Publish selected reviewed runs as GitHub Release artifacts instead of committing ordinary run outputs.
 
 ## Static Gate
 
@@ -80,6 +80,16 @@ Rubrics live in `evals/rubrics/`. Each criterion has required terms and a weight
 - it contains no forbidden terms
 
 The deterministic score is intentionally simple. The human reviewer still owns the final judgment, especially for business context, security, correctness, and maintainability.
+
+## Release Artifact
+
+For Evidence v1, package a reviewed run as:
+
+```bash
+zip -r golden-skill-sets-runtime-evals-v1.zip evals/runs/high-risk-v1
+```
+
+Attach the zip to the GitHub Release. The release notes should include the commit SHA, validation summary, CI link, and a reminder that deterministic scoring is a guardrail.
 
 ## High-Risk Smoke Set
 

@@ -25,3 +25,11 @@ body:
       placeholder: If you have a fix in mind, describe it here.
     validations:
       required: false
+
+  - type: textarea
+    id: eval-impact
+    attributes:
+      label: Eval impact
+      placeholder: If this changes golden workflow behavior, name the scenario, rubric, or expected output that should change.
+    validations:
+      required: false

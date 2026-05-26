@@ -49,3 +49,23 @@ body:
       placeholder: Give 2-3 real scenarios where this agent would be useful.
     validations:
       required: false
+
+  - type: dropdown
+    id: promotion-target
+    attributes:
+      label: Intended tier
+      description: Core promotion requires scenario, rubric, expected output, static validation, and runtime evidence.
+      options:
+        - extended agent
+        - golden workflow core candidate
+        - archive/reference material
+    validations:
+      required: true
+
+  - type: textarea
+    id: eval-plan
+    attributes:
+      label: Evaluation plan
+      placeholder: If this is a core candidate, name the scenario, rubric, expected output, and runtime evidence you expect to add.
+    validations:
+      required: false

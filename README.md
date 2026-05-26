@@ -1,10 +1,18 @@
 # Golden Skill Sets
 
+[![Validate Golden Skill Sets](https://github.com/tashiscool/golden-skill-sets/actions/workflows/lint-agents.yml/badge.svg)](https://github.com/tashiscool/golden-skill-sets/actions/workflows/lint-agents.yml)
+
 A bounded, human-accountable Workflow OS for agentic coding.
 
 This repository is the canonical source for the golden workflow skills under `skills/`, plus the extended Agency specialist roster under `extended-agents/`.
 
 The point is not to automate as much as possible. The point is to shorten feedback loops while keeping humans accountable for design, correctness, security, maintainability, and failure modes.
+
+## What This Is
+
+Golden Skill Sets is a small operating layer for agentic coding sessions. It gives agents repeatable workflow habits: orient first, clarify scope, preserve human gates, test behavior, diagnose with evidence, review against standards and specs, and hand off cleanly.
+
+It is designed for people using tools such as Codex, Cursor, Claude Code, and Copilot who want speed without giving up accountability.
 
 ## What Is Canonical
 
@@ -55,6 +63,12 @@ Do not hand-edit installed copies in `~/.codex/skills`. Sync from this repo:
 
 Then restart Codex.
 
+Check local install drift with:
+
+```bash
+./scripts/check-installed-skills.sh
+```
+
 ## Validate
 
 The authoritative validation command is:
@@ -101,6 +115,8 @@ For real evidence, run the high-risk scenarios with recorded or command-generate
 
 See `docs/golden/RUNTIME_EVALS.md`.
 
+Runtime evals prove that saved responses match the current rubrics for the scenario prompts. They do not prove correctness for every production codebase, and they do not replace human review.
+
 ## Extended Agents
 
 The original Agency roster is preserved under `extended-agents/`. These agents are useful specialist material, but they are not the install source for the golden workflow core.
@@ -120,6 +136,10 @@ The industry pack expansion is preserved under `extended-agents/industries/`. Th
 Candidates start in `extended-agents/` or `archive/`. Promotion into `skills/` requires a scenario fixture, rubric, expected output shape, static validation, at least one runtime eval, and human review.
 
 See `docs/golden/GOLDEN_STANDARD.md`.
+
+## Evidence V1
+
+The first public credibility milestone is documented in `docs/golden/V1_RELEASE.md`. Reviewed runtime evidence is published as a GitHub Release artifact instead of being committed under `evals/runs/`.
 
 ## Provenance
 

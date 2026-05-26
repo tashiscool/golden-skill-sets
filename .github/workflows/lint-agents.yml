@@ -1,6 +1,16 @@
-name: Lint Agent Files
+name: Validate Golden Skill Sets
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'skills/**'
+      - 'extended-agents/**'
+      - 'evals/**'
+      - 'docs/golden/**'
+      - 'scripts/**'
+      - '.github/workflows/lint-agents.yml'
   pull_request:
     paths:
       - 'skills/**'
@@ -8,6 +18,8 @@ on:
       - 'evals/**'
       - 'docs/golden/**'
       - 'scripts/**'
+      - '.github/workflows/lint-agents.yml'
+  workflow_dispatch:
 
 jobs:
   validate:
