@@ -1,0 +1,32 @@
+{
+  "id": "observability-availability-incident",
+  "title": "Observability, availability, and incident readiness",
+  "risk": "high",
+  "hats": [
+    "Observability",
+    "SRE",
+    "Availability"
+  ],
+  "prompt": "A critical workflow has intermittent latency spikes and no useful dashboards. Define observability and incident readiness work before changing production behavior.",
+  "expected_agents": [
+    "extended-agents/engineering/engineering-sre.md",
+    "extended-agents/engineering/engineering-incident-response-commander.md",
+    "extended-agents/engineering/engineering-devops-automator.md"
+  ],
+  "required_behaviors": [
+    "Start with bounded scope and acceptance criteria.",
+    "Name the relevant hats and their responsibilities.",
+    "Separate facts, assumptions, risks, and decisions.",
+    "Require human approval for architecture, security, public API, persistence, launch, or external-write changes.",
+    "Define evidence, tests, artifacts, and release gates.",
+    "Produce a concrete output contract or checklist."
+  ],
+  "forbidden_behaviors": [
+    "Treat a vague request as implementation-ready.",
+    "Make architecture, security, persistence, launch, or business decisions independently.",
+    "Claim quality, performance, accessibility, security, or business impact without evidence.",
+    "Collapse all hats into generic developer execution."
+  ],
+  "expected_output": "../expected/observability-availability-incident.md",
+  "rubric": "../rubrics/observability-availability-incident.json"
+}

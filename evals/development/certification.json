@@ -1,0 +1,189 @@
+{
+  "version": "development-capabilities-v1",
+  "status": "certified",
+  "description": "Development capability certification across product, design, engineering, quality, operations, security, reporting, and go-to-market hats.",
+  "capabilities": [
+    {
+      "id": "product-pm-ba-discovery",
+      "title": "Product, PM, and business analysis discovery",
+      "hats": [
+        "PM",
+        "BA",
+        "Product"
+      ],
+      "expected_agents": [
+        "extended-agents/product/product-sprint-prioritizer.md",
+        "extended-agents/project-management/project-manager-senior.md",
+        "extended-agents/product/product-feedback-synthesizer.md"
+      ],
+      "runtime_run_id": "development-capabilities-v1"
+    },
+    {
+      "id": "architecture-tradeoff-review",
+      "title": "Architecture tradeoff review",
+      "hats": [
+        "Architecture",
+        "Backend",
+        "Maintainability"
+      ],
+      "expected_agents": [
+        "extended-agents/engineering/engineering-software-architect.md",
+        "extended-agents/engineering/engineering-backend-architect.md",
+        "skills/improve-codebase-architecture/SKILL.md"
+      ],
+      "runtime_run_id": "development-capabilities-v1"
+    },
+    {
+      "id": "ux-ui-accessibility-flow",
+      "title": "UX, UI, and accessibility flow",
+      "hats": [
+        "UX",
+        "UI",
+        "Accessibility"
+      ],
+      "expected_agents": [
+        "extended-agents/design/design-ux-researcher.md",
+        "extended-agents/design/design-ux-architect.md",
+        "extended-agents/design/design-ui-designer.md",
+        "extended-agents/testing/testing-accessibility-auditor.md"
+      ],
+      "runtime_run_id": "development-capabilities-v1"
+    },
+    {
+      "id": "backend-api-data-contract",
+      "title": "Backend, API, and data contract",
+      "hats": [
+        "Backend",
+        "API",
+        "Data"
+      ],
+      "expected_agents": [
+        "extended-agents/engineering/engineering-backend-architect.md",
+        "extended-agents/engineering/engineering-data-engineer.md",
+        "extended-agents/testing/testing-api-tester.md"
+      ],
+      "runtime_run_id": "development-capabilities-v1"
+    },
+    {
+      "id": "frontend-implementation-quality",
+      "title": "Frontend implementation quality",
+      "hats": [
+        "Frontend",
+        "UI",
+        "QA"
+      ],
+      "expected_agents": [
+        "extended-agents/engineering/engineering-frontend-developer.md",
+        "extended-agents/design/design-ui-designer.md",
+        "extended-agents/testing/testing-evidence-collector.md"
+      ],
+      "runtime_run_id": "development-capabilities-v1"
+    },
+    {
+      "id": "qa-test-strategy",
+      "title": "Quality assurance and test strategy",
+      "hats": [
+        "QA",
+        "Testing",
+        "Risk"
+      ],
+      "expected_agents": [
+        "skills/tdd/SKILL.md",
+        "extended-agents/testing/testing-test-results-analyzer.md",
+        "extended-agents/testing/testing-reality-checker.md"
+      ],
+      "runtime_run_id": "development-capabilities-v1"
+    },
+    {
+      "id": "observability-availability-incident",
+      "title": "Observability, availability, and incident readiness",
+      "hats": [
+        "Observability",
+        "SRE",
+        "Availability"
+      ],
+      "expected_agents": [
+        "extended-agents/engineering/engineering-sre.md",
+        "extended-agents/engineering/engineering-incident-response-commander.md",
+        "extended-agents/engineering/engineering-devops-automator.md"
+      ],
+      "runtime_run_id": "development-capabilities-v1"
+    },
+    {
+      "id": "security-cia-privacy-review",
+      "title": "Security, confidentiality, integrity, and availability review",
+      "hats": [
+        "Security",
+        "CIA",
+        "Privacy"
+      ],
+      "expected_agents": [
+        "extended-agents/engineering/engineering-security-engineer.md",
+        "extended-agents/specialized/compliance-auditor.md",
+        "extended-agents/testing/testing-reality-checker.md"
+      ],
+      "runtime_run_id": "development-capabilities-v1"
+    },
+    {
+      "id": "reporting-analytics-decision",
+      "title": "Reporting, analytics, and decision quality",
+      "hats": [
+        "Reporting",
+        "Analytics",
+        "Data"
+      ],
+      "expected_agents": [
+        "extended-agents/support/support-analytics-reporter.md",
+        "extended-agents/engineering/engineering-data-engineer.md",
+        "extended-agents/specialized/report-distribution-agent.md"
+      ],
+      "runtime_run_id": "development-capabilities-v1"
+    },
+    {
+      "id": "marketing-sales-gtm-alignment",
+      "title": "Marketing, sales, and GTM alignment",
+      "hats": [
+        "Marketing",
+        "Sales",
+        "GTM"
+      ],
+      "expected_agents": [
+        "extended-agents/marketing/marketing-growth-hacker.md",
+        "extended-agents/marketing/marketing-content-creator.md",
+        "extended-agents/sales/sales-deal-strategist.md",
+        "extended-agents/sales/sales-discovery-coach.md"
+      ],
+      "runtime_run_id": "development-capabilities-v1"
+    },
+    {
+      "id": "delivery-program-governance",
+      "title": "Delivery, program governance, and stakeholder control",
+      "hats": [
+        "Program",
+        "PM",
+        "Governance"
+      ],
+      "expected_agents": [
+        "extended-agents/project-management/project-management-project-shepherd.md",
+        "extended-agents/project-management/project-management-jira-workflow-steward.md",
+        "extended-agents/specialized/automation-governance-architect.md"
+      ],
+      "runtime_run_id": "development-capabilities-v1"
+    },
+    {
+      "id": "ai-model-quality-evaluation",
+      "title": "AI/model quality and evaluation",
+      "hats": [
+        "AI",
+        "Model QA",
+        "Evaluation"
+      ],
+      "expected_agents": [
+        "extended-agents/engineering/engineering-ai-engineer.md",
+        "extended-agents/specialized/specialized-model-qa.md",
+        "extended-agents/testing/testing-tool-evaluator.md"
+      ],
+      "runtime_run_id": "development-capabilities-v1"
+    }
+  ]
+}

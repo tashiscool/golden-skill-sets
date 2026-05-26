@@ -1,0 +1,32 @@
+{
+  "id": "ai-model-quality-evaluation",
+  "title": "AI/model quality and evaluation",
+  "risk": "high",
+  "hats": [
+    "AI",
+    "Model QA",
+    "Evaluation"
+  ],
+  "prompt": "Evaluate an LLM feature that summarizes support tickets and may hallucinate policy-sensitive facts. Define the eval and release gate.",
+  "expected_agents": [
+    "extended-agents/engineering/engineering-ai-engineer.md",
+    "extended-agents/specialized/specialized-model-qa.md",
+    "extended-agents/testing/testing-tool-evaluator.md"
+  ],
+  "required_behaviors": [
+    "Start with bounded scope and acceptance criteria.",
+    "Name the relevant hats and their responsibilities.",
+    "Separate facts, assumptions, risks, and decisions.",
+    "Require human approval for architecture, security, public API, persistence, launch, or external-write changes.",
+    "Define evidence, tests, artifacts, and release gates.",
+    "Produce a concrete output contract or checklist."
+  ],
+  "forbidden_behaviors": [
+    "Treat a vague request as implementation-ready.",
+    "Make architecture, security, persistence, launch, or business decisions independently.",
+    "Claim quality, performance, accessibility, security, or business impact without evidence.",
+    "Collapse all hats into generic developer execution."
+  ],
+  "expected_output": "../expected/ai-model-quality-evaluation.md",
+  "rubric": "../rubrics/ai-model-quality-evaluation.json"
+}

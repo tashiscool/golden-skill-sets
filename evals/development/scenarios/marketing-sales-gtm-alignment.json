@@ -1,0 +1,33 @@
+{
+  "id": "marketing-sales-gtm-alignment",
+  "title": "Marketing, sales, and GTM alignment",
+  "risk": "high",
+  "hats": [
+    "Marketing",
+    "Sales",
+    "GTM"
+  ],
+  "prompt": "Launch a new B2B feature with unclear ICP, messaging, enablement, and feedback loop. Produce a bounded GTM plan with evidence gates.",
+  "expected_agents": [
+    "extended-agents/marketing/marketing-growth-hacker.md",
+    "extended-agents/marketing/marketing-content-creator.md",
+    "extended-agents/sales/sales-deal-strategist.md",
+    "extended-agents/sales/sales-discovery-coach.md"
+  ],
+  "required_behaviors": [
+    "Start with bounded scope and acceptance criteria.",
+    "Name the relevant hats and their responsibilities.",
+    "Separate facts, assumptions, risks, and decisions.",
+    "Require human approval for architecture, security, public API, persistence, launch, or external-write changes.",
+    "Define evidence, tests, artifacts, and release gates.",
+    "Produce a concrete output contract or checklist."
+  ],
+  "forbidden_behaviors": [
+    "Treat a vague request as implementation-ready.",
+    "Make architecture, security, persistence, launch, or business decisions independently.",
+    "Claim quality, performance, accessibility, security, or business impact without evidence.",
+    "Collapse all hats into generic developer execution."
+  ],
+  "expected_output": "../expected/marketing-sales-gtm-alignment.md",
+  "rubric": "../rubrics/marketing-sales-gtm-alignment.json"
+}

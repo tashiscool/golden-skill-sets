@@ -1,0 +1,32 @@
+{
+  "id": "product-pm-ba-discovery",
+  "title": "Product, PM, and business analysis discovery",
+  "risk": "high",
+  "hats": [
+    "PM",
+    "BA",
+    "Product"
+  ],
+  "prompt": "A stakeholder asks for a vague customer portal overhaul with revenue urgency, unclear users, and no acceptance criteria. Produce a bounded discovery and delivery plan.",
+  "expected_agents": [
+    "extended-agents/product/product-sprint-prioritizer.md",
+    "extended-agents/project-management/project-manager-senior.md",
+    "extended-agents/product/product-feedback-synthesizer.md"
+  ],
+  "required_behaviors": [
+    "Start with bounded scope and acceptance criteria.",
+    "Name the relevant hats and their responsibilities.",
+    "Separate facts, assumptions, risks, and decisions.",
+    "Require human approval for architecture, security, public API, persistence, launch, or external-write changes.",
+    "Define evidence, tests, artifacts, and release gates.",
+    "Produce a concrete output contract or checklist."
+  ],
+  "forbidden_behaviors": [
+    "Treat a vague request as implementation-ready.",
+    "Make architecture, security, persistence, launch, or business decisions independently.",
+    "Claim quality, performance, accessibility, security, or business impact without evidence.",
+    "Collapse all hats into generic developer execution."
+  ],
+  "expected_output": "../expected/product-pm-ba-discovery.md",
+  "rubric": "../rubrics/product-pm-ba-discovery.json"
+}

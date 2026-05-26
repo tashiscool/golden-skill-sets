@@ -53,3 +53,14 @@ Applied here:
 Core is for behavior that should shape almost every serious agentic coding session. Extended is for expertise that helps once the scope is clear. Archive is for provenance and learning.
 
 Promotion requires static validation, runtime scenario evidence, and human review.
+
+## Development Hats
+
+The development system should not be only an implementation toolkit. It must deliberately switch between product, PM, BA, architecture, UX, UI, backend, QA, observability, security, reporting, marketing, and sales perspectives while keeping the same bounded workflow.
+
+Applied here:
+
+- hats are certified as capability lenses, not necessarily literal skills
+- specialist agents advise inside approved scope
+- workflow skills remain responsible for scope, evidence, tests, approval gates, and handoff
+- claims about quality, security, reliability, accessibility, or business impact require artifacts

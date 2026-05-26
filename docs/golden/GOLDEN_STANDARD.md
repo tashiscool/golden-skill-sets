@@ -14,6 +14,8 @@ The v1 core contains 19 skills. Broad specialist agents are not promoted into co
 
 Industry packs can become certified Golden Industry Packs while remaining under `extended-agents/industries/`. Certification requires every agent in the pack to have scenario, rubric, expected-output, and runtime evidence. See `docs/golden/INDUSTRY_CERTIFICATION.md`.
 
+Development hats can become certified capability lenses without becoming literal skills. Certification requires scenario, rubric, expected-output, and runtime evidence across product, design, engineering, quality, operations, security, reporting, and go-to-market work. See `docs/golden/DEVELOPMENT_CAPABILITIES.md`.
+
 ## Quality Bar
 
 An agent or skill is golden only when it satisfies all five bars.
@@ -63,6 +65,8 @@ Use Agency specialist agents only inside an approved scope:
 Industry pack extensions remain under `extended-agents/industries/`. They are valuable domain context, but they do not become core unless they generalize into reusable workflow control.
 
 All 30 generated industry packs are certified as Golden Industry Packs with every-agent scenario, rubric, expected-output, and runtime evidence.
+
+The development capability layer certifies the cross-functional hats needed for real software delivery: PM/BA/Product, architecture, UX/UI/accessibility, backend/API/data, frontend, QA, observability/availability, security/CIA/privacy, reporting/analytics, GTM, governance, and AI/model evaluation.
 
 ## Human Gates
 
@@ -133,3 +137,4 @@ Do not call a set of agents "golden" unless:
 - No runtime response violates forbidden behaviors.
 - Installed Codex skills can be regenerated from this repo with `./scripts/sync-installed-skills.sh`.
 - Certified industry packs pass `./scripts/validate-industry-evals.py` and strict industry runtime validation for their release run.
+- Certified development capabilities pass `./scripts/validate-development-evals.py` and strict development runtime validation for their release run.
